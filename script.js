@@ -1,55 +1,180 @@
-// ================= NAVBAR MOBILE TOGGLE =================
+// =========================
+// MOBILE MENU TOGGLE
+// =========================
 
-const menuBtn = document.getElementById("menu-btn");
-const navLinks = document.getElementById("nav-links");
+function toggleMenu(){
 
-menuBtn.addEventListener("click", () => {
+document.getElementById("navLinks").classList.toggle("active");
 
-navLinks.classList.toggle("active");
+}
+
+
+
+// =========================
+// SMOOTH SCROLL
+// =========================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+const target=document.querySelector(this.getAttribute("href"));
+
+if(target){
+
+target.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+
+});
 
 });
 
 
 
-// ================= MODAL SYSTEM =================
+// =========================
+// TYPING ANIMATION
+// =========================
 
-const modal = document.getElementById("modal");
+const roles=[
 
-const modalImg = document.getElementById("modal-img");
+"Java Full Stack Developer",
 
-const closeBtn = document.querySelector(".close");
+"Backend Developer",
+
+"REST API Developer",
+
+"MySQL Specialist",
+
+"Software Developer"
+
+];
+
+let roleIndex=0;
+
+let charIndex=0;
+
+let deleting=false;
+
+function typeEffect(){
+
+const element=document.getElementById("typing");
+
+if(!element) return;
+
+const currentRole=roles[roleIndex];
+
+if(!deleting){
+
+element.textContent=currentRole.substring(0,charIndex++);
+
+if(charIndex>currentRole.length){
+
+deleting=true;
+
+setTimeout(typeEffect,1500);
+
+return;
+
+}
+
+}else{
+
+element.textContent=currentRole.substring(0,charIndex--);
+
+if(charIndex===0){
+
+deleting=false;
+
+roleIndex=(roleIndex+1)%roles.length;
+
+}
+
+}
+
+setTimeout(typeEffect,deleting?50:100);
+
+}
+
+typeEffect();
 
 
 
-// open modal function
+// =========================
+// MODAL SYSTEM
+// =========================
 
-function openModal(imageSrc){
+let images=[
 
-modal.style.display = "flex";
+"images/project1.png",
 
-modalImg.src = imageSrc;
+"images/project2.png",
+
+"images/project3.png"
+
+];
+
+let currentImage=0;
+
+
+
+function openModal(){
+
+const modal=document.getElementById("projectModal");
+
+const img=document.getElementById("modalImage");
+
+modal.style.display="flex";
+
+img.src=images[currentImage];
 
 }
 
 
 
-// close modal
+function closeModal(){
 
-closeBtn.onclick = function(){
+document.getElementById("projectModal").style.display="none";
 
-modal.style.display = "none";
-
-};
+}
 
 
 
-// close on outside click
+function nextImage(){
 
-window.onclick = function(e){
+currentImage=(currentImage+1)%images.length;
 
-if(e.target === modal){
+document.getElementById("modalImage").src=images[currentImage];
 
-modal.style.display = "none";
+}
+
+
+
+function prevImage(){
+
+currentImage=(currentImage-1+images.length)%images.length;
+
+document.getElementById("modalImage").src=images[currentImage];
+
+}
+
+
+
+// CLOSE MODAL CLICK OUTSIDE
+
+window.onclick=function(e){
+
+const modal=document.getElementById("projectModal");
+
+if(e.target===modal){
+
+modal.style.display="none";
 
 }
 
@@ -57,34 +182,34 @@ modal.style.display = "none";
 
 
 
+// =========================
+// SCROLL REVEAL ANIMATION
+// =========================
 
-// ================= SCROLL ANIMATION =================
+const observer=new IntersectionObserver(entries=>{
 
-const observer = new IntersectionObserver(entries => {
-
-entries.forEach(entry => {
+entries.forEach(entry=>{
 
 if(entry.isIntersecting){
 
-entry.target.style.opacity = "1";
+entry.target.style.opacity="1";
 
-entry.target.style.transform = "translateY(0)";
+entry.target.style.transform="translateY(0)";
 
 }
 
 });
 
-},{
-threshold:0.1
 });
 
 
 
-document.querySelectorAll(".section, .project-card, .skills span")
-.forEach(el=>{
+document.querySelectorAll(".project-card, .skills span").forEach(el=>{
 
 el.style.opacity="0";
-el.style.transform="translateY(40px)";
+
+el.style.transform="translateY(30px)";
+
 el.style.transition="0.6s";
 
 observer.observe(el);
@@ -93,72 +218,44 @@ observer.observe(el);
 
 
 
-// ================= SMOOTH SCROLL NAV =================
+// =========================
+// NAV ACTIVE LINK
+// =========================
 
-document.querySelectorAll(".nav-links a").forEach(link => {
+const sections=document.querySelectorAll("section");
 
-link.addEventListener("click", function(e){
-
-e.preventDefault();
-
-const target = document.querySelector(this.getAttribute("href"));
-
-target.scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-navLinks.classList.remove("active");
-
-});
-
-});
+const navLinks=document.querySelectorAll(".nav-links a");
 
 
 
-// ================= HERO IMAGE PREMIUM GLOW =================
+window.addEventListener("scroll",()=>{
 
-const heroImage = document.querySelector(".hero-image-container");
+let current="";
 
-heroImage.addEventListener("mousemove", e => {
+sections.forEach(section=>{
 
-const rect = heroImage.getBoundingClientRect();
+const sectionTop=section.offsetTop;
 
-const x = e.clientX - rect.left;
-const y = e.clientY - rect.top;
+if(pageYOffset>=sectionTop-200){
 
-heroImage.style.boxShadow =
-`${(x-140)/8}px ${(y-140)/8}px 60px rgba(78,115,223,0.6)`;
-
-});
-
-
-heroImage.addEventListener("mouseleave", ()=>{
-
-heroImage.style.boxShadow =
-"0 0 60px rgba(78,115,223,0.6)";
-
-});
-
-
-
-// ================= PERFORMANCE FIX =================
-
-// prevents lag on scroll
-let ticking = false;
-
-window.addEventListener("scroll", () => {
-
-if(!ticking){
-
-window.requestAnimationFrame(()=>{
-
-ticking = false;
-});
-
-ticking = true;
+current=section.getAttribute("id");
 
 }
+
+});
+
+
+
+navLinks.forEach(link=>{
+
+link.classList.remove("active");
+
+if(link.getAttribute("href")==="#"+current){
+
+link.classList.add("active");
+
+}
+
+});
 
 });
