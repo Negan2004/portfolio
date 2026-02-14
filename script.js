@@ -146,3 +146,33 @@ el.classList.add("show");
 window.addEventListener("scroll", reveal);
 
 reveal();
+
+particlesJS("particles-js", {
+
+particles:{
+
+number:{ value:80 },
+
+color:{ value:"#4e73df" },
+
+shape:{ type:"circle" },
+
+opacity:{ value:0.5 },
+
+size:{ value:3 },
+
+move:{ speed:1 }
+
+},
+
+interactivity:{
+
+events:{
+
+onhover:{ enable:true, mode:"repulse" }
+
+}
+
+}
+
+});
