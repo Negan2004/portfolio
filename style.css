@@ -153,3 +153,27 @@ height:100px;
 }
 
 }
+
+/* ACTIVE NAV LINK */
+
+nav a.active{
+background:#4e73df;
+color:white;
+}
+
+
+/* SCROLL ANIMATION */
+
+.section,
+.card,
+.skills span,
+.cert{
+opacity:0;
+transform:translateY(30px);
+transition:all 0.6s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
