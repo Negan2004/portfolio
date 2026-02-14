@@ -1,157 +1,164 @@
-// ===============================
-// MOBILE NAV MENU TOGGLE
-// ===============================
+// ================= NAVBAR MOBILE TOGGLE =================
 
-function toggleMenu()
-{
-    document.getElementById("navLinks").classList.toggle("active");
-}
+const menuBtn = document.getElementById("menu-btn");
+const navLinks = document.getElementById("nav-links");
 
+menuBtn.addEventListener("click", () => {
 
-// ===============================
-// CLOSE MENU WHEN CLICK LINK (MOBILE)
-// ===============================
+navLinks.classList.toggle("active");
 
-document.querySelectorAll("#navLinks a").forEach(link =>
-{
-    link.addEventListener("click", () =>
-    {
-        document.getElementById("navLinks").classList.remove("active");
-    });
 });
 
 
 
-// ===============================
-// SMOOTH SCROLL (SAFE VERSION)
-// ===============================
+// ================= MODAL SYSTEM =================
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor =>
-{
-    anchor.addEventListener("click", function(e)
-    {
-        e.preventDefault();
+const modal = document.getElementById("modal");
 
-        const target = document.querySelector(this.getAttribute("href"));
+const modalImg = document.getElementById("modal-img");
 
-        if(target)
-        {
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }
-    });
-});
+const closeBtn = document.querySelector(".close");
 
 
 
-// ===============================
-// PROJECT MODAL SYSTEM
-// ===============================
+// open modal function
 
-let modalImages = [];
+function openModal(imageSrc){
 
-let currentIndex = 0;
+modal.style.display = "flex";
 
+modalImg.src = imageSrc;
 
-// OPEN MODAL
-
-function openModal(imagesArray)
-{
-    modalImages = imagesArray;
-
-    currentIndex = 0;
-
-    document.getElementById("modal").style.display = "flex";
-
-    document.getElementById("modalImg").src = modalImages[currentIndex];
-}
-
-
-// CLOSE MODAL
-
-function closeModal()
-{
-    document.getElementById("modal").style.display = "none";
-}
-
-
-// NEXT IMAGE
-
-function nextImage()
-{
-    if(modalImages.length === 0) return;
-
-    currentIndex++;
-
-    if(currentIndex >= modalImages.length)
-        currentIndex = 0;
-
-    document.getElementById("modalImg").src = modalImages[currentIndex];
-}
-
-
-// PREVIOUS IMAGE
-
-function prevImage()
-{
-    if(modalImages.length === 0) return;
-
-    currentIndex--;
-
-    if(currentIndex < 0)
-        currentIndex = modalImages.length - 1;
-
-    document.getElementById("modalImg").src = modalImages[currentIndex];
 }
 
 
 
-// ===============================
-// CLOSE MODAL WHEN CLICK OUTSIDE
-// ===============================
+// close modal
 
-window.onclick = function(e)
-{
-    const modal = document.getElementById("modal");
+closeBtn.onclick = function(){
 
-    if(e.target === modal)
-    {
-        closeModal();
-    }
+modal.style.display = "none";
+
 };
 
 
 
-// ===============================
-// PERFORMANCE OPTIMIZATION
-// ===============================
+// close on outside click
 
-// Prevent heavy scroll lag
+window.onclick = function(e){
 
-let ticking = false;
+if(e.target === modal){
 
-window.addEventListener("scroll", function()
-{
-    if(!ticking)
-    {
-        window.requestAnimationFrame(function()
-        {
-            ticking = false;
-        });
+modal.style.display = "none";
 
-        ticking = true;
-    }
+}
+
+};
+
+
+
+
+// ================= SCROLL ANIMATION =================
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity = "1";
+
+entry.target.style.transform = "translateY(0)";
+
+}
+
+});
+
+},{
+threshold:0.1
 });
 
 
 
-// ===============================
-// SAFE IMAGE LOAD HANDLER
-// ===============================
+document.querySelectorAll(".section, .project-card, .skills span")
+.forEach(el=>{
 
-window.addEventListener("load", function()
-{
-    document.body.style.opacity = "1";
+el.style.opacity="0";
+el.style.transform="translateY(40px)";
+el.style.transition="0.6s";
+
+observer.observe(el);
+
+});
+
+
+
+// ================= SMOOTH SCROLL NAV =================
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+link.addEventListener("click", function(e){
+
+e.preventDefault();
+
+const target = document.querySelector(this.getAttribute("href"));
+
+target.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+navLinks.classList.remove("active");
+
+});
+
+});
+
+
+
+// ================= HERO IMAGE PREMIUM GLOW =================
+
+const heroImage = document.querySelector(".hero-image-container");
+
+heroImage.addEventListener("mousemove", e => {
+
+const rect = heroImage.getBoundingClientRect();
+
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+
+heroImage.style.boxShadow =
+`${(x-140)/8}px ${(y-140)/8}px 60px rgba(78,115,223,0.6)`;
+
+});
+
+
+heroImage.addEventListener("mouseleave", ()=>{
+
+heroImage.style.boxShadow =
+"0 0 60px rgba(78,115,223,0.6)";
+
+});
+
+
+
+// ================= PERFORMANCE FIX =================
+
+// prevents lag on scroll
+let ticking = false;
+
+window.addEventListener("scroll", () => {
+
+if(!ticking){
+
+window.requestAnimationFrame(()=>{
+
+ticking = false;
+});
+
+ticking = true;
+
+}
+
 });
