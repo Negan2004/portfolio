@@ -15,76 +15,65 @@
 
 <body>
 
-
 <!-- LOADER -->
 <div id="loader">
-    <div class="loader-content">
-        <div class="loader-circle"></div>
-        <h2>Samarth Sharma</h2>
-    </div>
+  <div class="loader-content">
+    <div class="loader-circle"></div>
+    <h2>Samarth Sharma</h2>
+    <p>Loading Portfolio...</p>
+  </div>
 </div>
 
-
-<!-- PARTICLES BACKGROUND -->
+<div id="progress-bar"></div>
 <div id="particles-js"></div>
 
-
-<!-- MOBILE MENU -->
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
 
 <!-- SIDEBAR -->
 <div class="sidebar">
 
-<div class="profile">
+  <div class="profile">
 
-<div class="profile-image">
-<img src="images/samarth.jpeg" alt="Samarth Sharma">
+    <div class="profile-image">
+      <img src="images/samarth.jpeg" alt="Samarth Sharma">
+    </div>
+
+    <h2 class="gradient-text">Samarth Sharma</h2>
+
+    <p class="typing-text">
+      <span id="typing"></span>
+    </p>
+
+    <a href="MY_Resume.pdf" download class="resume-btn">
+      Download Resume
+    </a>
+
+  </div>
+
+  <nav>
+
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+
+  </nav>
+
 </div>
-
-<h2>Samarth Sharma</h2>
-
-<p class="typing-text">
-<span id="typing"></span>
-</p>
-
-<a href="MY_Resume.pdf" download class="resume-btn">
-Download Resume
-</a>
-
-</div>
-
-<nav>
-
-<a href="#hero">Home</a>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#certificates">Certificates</a>
-<a href="#contact">Contact</a>
-
-</nav>
-
-</div>
-
-
 
 <!-- MAIN -->
 <div class="main">
 
-
 <!-- HERO -->
 <section id="hero" class="hero">
 
-<h1 class="hero-title">
-Samarth Sharma
-</h1>
+<h1>Hi, I'm Samarth Sharma</h1>
 
-<h2 class="hero-role">
-Java Full Stack Developer
-</h2>
+<h2>Java Full Stack Developer</h2>
 
-<p class="hero-desc">
+<p>
 Building scalable backend systems, REST APIs, and modern web applications.
 </p>
 
@@ -94,35 +83,21 @@ Explore My Work
 
 </section>
 
-
-
 <!-- ABOUT -->
 <section id="about" class="section">
 
 <h1>About Me</h1>
 
-<div class="card">
-
 <p>
-
-Entry-level Java Full Stack Developer with hands-on experience building dynamic web applications using Java, JSP, Servlets, MySQL, and Bootstrap.
-
-Developed real-world full stack projects with Admin authentication, CRUD operations, and REST API integration.
-
-Passionate about clean code, scalable backend systems, and continuously improving technical skills. Actively seeking opportunity to contribute and grow in professional software development environment.
-
+Entry-level Java Full Stack Developer with hands-on experience building dynamic web applications using Java, JSP, Servlets, MySQL, and Bootstrap. Developed real-world projects including Admin dashboards, CRUD systems, and REST API integrations. Passionate about clean code, scalable backend architecture, and continuously improving development skills. Seeking opportunity to contribute and grow in professional software development environment.
 </p>
 
-</div>
-
 </section>
-
-
 
 <!-- SKILLS -->
 <section id="skills" class="section">
 
-<h1>Skills</h1>
+<h1>Technical Skills</h1>
 
 <div class="skills">
 
@@ -141,37 +116,28 @@ Passionate about clean code, scalable backend systems, and continuously improvin
 
 </section>
 
-
-
 <!-- PROJECTS -->
 <section id="projects" class="section">
 
 <h1>Projects</h1>
 
-<div class="grid">
-
-<!-- PROJECT 1 -->
-<div class="card">
+<div class="project-card">
 
 <h3>Project Idea Generator</h3>
 
 <p>
-
-Full Stack Java web application using JSP, Servlets, MySQL, and GitHub REST API.
-
-Includes Admin authentication, CRUD operations, dynamic project idea generation.
-
+Java Full Stack web application with Admin authentication, CRUD operations, and GitHub API integration for dynamic project idea generation.
 </p>
 
 <div class="project-buttons">
 
-<button onclick="openModal(0)" class="btn">
+<button onclick="openModal(0)" class="btn-primary">
 View Details
 </button>
 
 <a href="https://github.com/Negan2004/project-idea-generator-java"
 target="_blank"
-class="btn btn-outline">
+class="btn-secondary">
 GitHub →
 </a>
 
@@ -180,22 +146,17 @@ GitHub →
 </div>
 
 
-
-<!-- PROJECT 2 -->
-<div class="card">
+<div class="project-card">
 
 <h3>Movie Review System</h3>
 
 <p>
-
-Web application built using PHP and MySQL allowing users to browse movies,
-view details, and read reviews. Includes database integration and responsive UI.
-
+Web application built using PHP and MySQL allowing users to browse movies, view details, and submit reviews with database integration and responsive UI.
 </p>
 
 <div class="project-buttons">
 
-<button onclick="openModal(1)" class="btn">
+<button onclick="openModal(1)" class="btn-primary">
 View Details
 </button>
 
@@ -203,55 +164,39 @@ View Details
 
 </div>
 
-</div>
-
 </section>
-
-
 
 <!-- CERTIFICATES -->
 <section id="certificates" class="section">
 
 <h1>Certificates</h1>
 
-<div class="grid">
+<div class="cert-grid">
 
-<div class="card cert-card">
-<img src="images/Full_Stack.jpg">
-<p>Java Full Stack Certificate</p>
-</div>
-
-<div class="card cert-card">
-<img src="images/RDBMS.png">
-<p>RDBMS Training Certificate</p>
-</div>
+<img src="images/Full_Stack.jpg" class="cert">
+<img src="images/RDBMS.png" class="cert">
 
 </div>
 
 </section>
-
-
 
 <!-- CONTACT -->
 <section id="contact" class="section">
 
 <h1>Contact</h1>
 
-<div class="card">
-
 <p>Email: samugsharma1111@gmail.com</p>
 
-<p>GitHub: github.com/Negan2004</p>
-
-</div>
+<p>
+GitHub:
+<a href="https://github.com/Negan2004" target="_blank">
+github.com/Negan2004
+</a>
+</p>
 
 </section>
 
-
-
 </div>
-
-
 
 <!-- MODAL -->
 <div id="projectModal" class="modal">
@@ -262,11 +207,8 @@ View Details
 
 </div>
 
-
-
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 <script src="script.js"></script>
-
 
 </body>
 </html>

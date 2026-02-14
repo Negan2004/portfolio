@@ -1,6 +1,6 @@
-/* ===============================
-LOADER
-=============================== */
+// ===============================
+// LOADER
+// ===============================
 
 window.addEventListener("load", () => {
 
@@ -19,9 +19,31 @@ loader.style.display = "none";
 });
 
 
-/* ===============================
-MENU TOGGLE (MOBILE)
-=============================== */
+
+// ===============================
+// PROGRESS BAR
+// ===============================
+
+window.addEventListener("scroll", () => {
+
+const scrollTop = document.documentElement.scrollTop;
+
+const height =
+document.documentElement.scrollHeight -
+document.documentElement.clientHeight;
+
+const progress = (scrollTop / height) * 100;
+
+document.getElementById("progress-bar").style.width =
+progress + "%";
+
+});
+
+
+
+// ===============================
+// MOBILE MENU
+// ===============================
 
 function toggleMenu(){
 
@@ -30,23 +52,25 @@ document.querySelector(".sidebar").classList.toggle("active");
 }
 
 
-/* ===============================
-SMOOTH SCROLL FIX
-=============================== */
+
+// ===============================
+// SMOOTH SCROLL FIX
+// ===============================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 anchor.addEventListener("click", function(e){
 
-const target = document.querySelector(this.getAttribute("href"));
+e.preventDefault();
+
+const target = document.querySelector(
+this.getAttribute("href")
+);
 
 if(target){
 
-e.preventDefault();
-
 target.scrollIntoView({
-behavior: "smooth",
-block: "start"
+behavior:"smooth"
 });
 
 }
@@ -56,11 +80,13 @@ block: "start"
 });
 
 
-/* ===============================
-ACTIVE NAV LINK
-=============================== */
+
+// ===============================
+// ACTIVE NAV LINK
+// ===============================
 
 const sections = document.querySelectorAll("section");
+
 const navLinks = document.querySelectorAll(".sidebar nav a");
 
 window.addEventListener("scroll", () => {
@@ -69,9 +95,9 @@ let current = "";
 
 sections.forEach(section => {
 
-const sectionTop = section.offsetTop - 200;
+const sectionTop = section.offsetTop;
 
-if(window.scrollY >= sectionTop){
+if(pageYOffset >= sectionTop - 300){
 
 current = section.getAttribute("id");
 
@@ -94,45 +120,42 @@ link.classList.add("active");
 });
 
 
-/* ===============================
-SCROLL REVEAL (SKILLS FIXED)
-=============================== */
 
-const revealItems = document.querySelectorAll(
-".section, .card, .skills span, .cert-card"
+// ===============================
+// REVEAL ANIMATION FIX (SKILLS INCLUDED)
+// ===============================
+
+const revealElements = document.querySelectorAll(
+".section, .skills span, .project-card, .cert"
 );
 
-const revealObserver = new IntersectionObserver(entries => {
+function reveal(){
 
-entries.forEach(entry => {
+revealElements.forEach(el => {
 
-if(entry.isIntersecting){
+const elementTop = el.getBoundingClientRect().top;
 
-entry.target.style.opacity = "1";
-entry.target.style.transform = "translateY(0)";
+const windowHeight = window.innerHeight;
+
+if(elementTop < windowHeight - 80){
+
+el.classList.add("show");
 
 }
 
 });
 
-}, {
-threshold: 0.1
-});
+}
 
-revealItems.forEach(item => {
+window.addEventListener("scroll", reveal);
 
-item.style.opacity = "0";
-item.style.transform = "translateY(40px)";
-item.style.transition = "all 0.6s ease";
-
-revealObserver.observe(item);
-
-});
+reveal();
 
 
-/* ===============================
-TYPING EFFECT
-=============================== */
+
+// ===============================
+// TYPING ANIMATION
+// ===============================
 
 const roles = [
 
@@ -145,7 +168,9 @@ const roles = [
 ];
 
 let roleIndex = 0;
+
 let charIndex = 0;
+
 let deleting = false;
 
 function typeEffect(){
@@ -154,98 +179,111 @@ const element = document.getElementById("typing");
 
 if(!element) return;
 
-const currentRole = roles[roleIndex];
+const current = roles[roleIndex];
 
 if(!deleting){
 
-element.textContent = currentRole.substring(0, charIndex++);
+element.textContent =
+current.substring(0, charIndex++);
 
-if(charIndex > currentRole.length){
+if(charIndex > current.length){
 
 deleting = true;
+
 setTimeout(typeEffect, 1500);
+
 return;
 
 }
 
 }else{
 
-element.textContent = currentRole.substring(0, charIndex--);
+element.textContent =
+current.substring(0, charIndex--);
 
 if(charIndex === 0){
 
 deleting = false;
+
 roleIndex = (roleIndex + 1) % roles.length;
 
 }
 
 }
 
-setTimeout(typeEffect, deleting ? 40 : 80);
+setTimeout(typeEffect, deleting ? 50 : 100);
 
 }
 
 typeEffect();
 
 
-/* ===============================
-MODAL FIX (PROJECT DETAILS)
-=============================== */
+
+// ===============================
+// PROJECT MODAL FIX
+// ===============================
 
 let currentImageIndex = 0;
 
 const projectImages = [
+
 "images/project1.png",
 "images/project2.png",
 "images/project3.png"
+
 ];
 
 function openModal(){
 
 const modal = document.getElementById("projectModal");
 
-if(modal){
+const img = document.getElementById("modalImage");
 
 modal.style.display = "flex";
 
-document.getElementById("modalImage").src =
-projectImages[currentImageIndex];
+img.src = projectImages[currentImageIndex];
 
 }
 
-}
+
 
 function closeModal(){
 
-document.getElementById("projectModal").style.display = "none";
+document.getElementById("projectModal").style.display =
+"none";
 
 }
+
+
 
 function nextImage(){
 
-currentImageIndex++;
-
-if(currentImageIndex >= projectImages.length)
-currentImageIndex = 0;
+currentImageIndex =
+(currentImageIndex + 1) % projectImages.length;
 
 document.getElementById("modalImage").src =
 projectImages[currentImageIndex];
 
 }
+
+
 
 function prevImage(){
 
-currentImageIndex--;
-
-if(currentImageIndex < 0)
-currentImageIndex = projectImages.length - 1;
+currentImageIndex =
+(currentImageIndex - 1 + projectImages.length)
+% projectImages.length;
 
 document.getElementById("modalImage").src =
 projectImages[currentImageIndex];
 
 }
 
-window.addEventListener("click", e => {
+
+
+// CLOSE MODAL CLICK OUTSIDE
+
+window.onclick = function(e){
 
 const modal = document.getElementById("projectModal");
 
@@ -255,38 +293,13 @@ modal.style.display = "none";
 
 }
 
-});
+};
 
 
-/* ===============================
-APPLE-LEVEL GLOW MOUSE EFFECT
-=============================== */
 
-const glow = document.createElement("div");
-
-glow.style.position = "fixed";
-glow.style.width = "300px";
-glow.style.height = "300px";
-glow.style.borderRadius = "50%";
-glow.style.pointerEvents = "none";
-glow.style.background =
-"radial-gradient(circle, rgba(78,115,223,0.25), transparent 70%)";
-glow.style.zIndex = "-1";
-glow.style.transition = "transform 0.15s ease";
-
-document.body.appendChild(glow);
-
-document.addEventListener("mousemove", e => {
-
-glow.style.transform =
-`translate(${e.clientX - 150}px, ${e.clientY - 150}px)`;
-
-});
-
-
-/* ===============================
-PARTICLES BACKGROUND
-=============================== */
+// ===============================
+// PARTICLES FIX
+// ===============================
 
 window.addEventListener("load", () => {
 
@@ -294,52 +307,41 @@ if(typeof particlesJS !== "undefined"){
 
 particlesJS("particles-js", {
 
-particles: {
+particles:{
 
-number: { value: 60 },
+number:{ value:60 },
 
-color: { value: "#4e73df" },
+color:{ value:"#4e73df" },
 
-shape: { type: "circle" },
+shape:{ type:"circle" },
 
-opacity: { value: 0.4 },
+opacity:{ value:0.5 },
 
-size: { value: 3 },
+size:{ value:3 },
 
-move: { speed: 1 }
-
-}
-
-});
+move:{ speed:1 }
 
 }
 
 });
 
+}
 
-/* ===============================
-PREMIUM HERO ANIMATION
-=============================== */
+});
 
-window.addEventListener("load", () => {
 
-const heroElements = document.querySelectorAll(
-".hero-title, .hero-role, .hero-desc, .hero-btn"
-);
 
-heroElements.forEach((el, index) => {
+// ===============================
+// MOBILE MENU AUTO CLOSE
+// ===============================
 
-el.style.opacity = "0";
-el.style.transform = "translateY(40px)";
+document.querySelectorAll(".sidebar nav a")
+.forEach(link => {
 
-setTimeout(() => {
+link.addEventListener("click", () => {
 
-el.style.transition = "all 0.8s ease";
-
-el.style.opacity = "1";
-el.style.transform = "translateY(0)";
-
-}, 400 + index * 200);
+document.querySelector(".sidebar")
+.classList.remove("active");
 
 });
 
