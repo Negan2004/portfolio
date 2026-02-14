@@ -231,7 +231,7 @@ link.classList.add("active");
 
 // ================= REVEAL =================
 
-const revealElements=document.querySelectorAll(".section, .card, .skills span, .cert");
+const revealElements=document.querySelectorAll(".section, .card, .skills span, .cert, .profile-image");
 
 function reveal(){
 
@@ -305,11 +305,20 @@ let currentImage=0;
 
 function openModal(){
 
-document.getElementById("projectModal").style.display="flex";
+const modal=document.getElementById("projectModal");
 
-document.getElementById("modalImage").src=images[currentImage];
+modal.style.display="flex";
+
+modal.style.opacity="0";
+
+setTimeout(()=>{
+
+modal.style.opacity="1";
+
+},10);
 
 }
+
 
 function closeModal(){
 
@@ -344,3 +353,24 @@ modal.style.display="none";
 }
 
 }
+
+// premium hero animation
+
+window.addEventListener("load",()=>{
+
+document.querySelectorAll(".hero-title, .hero-role, .hero-desc, .hero-btn")
+.forEach((el,i)=>{
+
+el.style.opacity="0";
+
+setTimeout(()=>{
+
+el.style.opacity="1";
+
+el.style.transform="translateY(0)";
+
+},500+i*300);
+
+});
+
+});
