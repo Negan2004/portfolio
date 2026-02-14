@@ -15,36 +15,75 @@ document.getElementById("loader").style.display="none";
 });
 
 
-// ================= SCROLL PROGRESS =================
+
+// ================= SCROLL PROGRESS + PARALLAX =================
 
 window.addEventListener("scroll", function(){
 
+// progress bar
 let scrollTop=document.documentElement.scrollTop;
-
 let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-
 let progress=(scrollTop/height)*100;
 
 document.getElementById("progress-bar").style.width=progress+"%";
 
+
+// parallax
+document.querySelectorAll(".card").forEach(card=>{
+
+let speed=window.scrollY*0.02;
+card.style.transform=`translateY(${speed}px)`;
+
 });
+
+});
+
+
 
 
 // ================= CURSOR =================
 
+// DESKTOP CURSOR MOVE
 document.addEventListener("mousemove", function(e){
 
-const cursor=document.querySelector(".cursor");
+    const cursor = document.querySelector(".cursor");
 
-if(cursor){
-
-cursor.style.left=e.clientX+"px";
-
-cursor.style.top=e.clientY+"px";
-
-}
+    if(cursor){
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+    }
 
 });
+
+
+// MOBILE TOUCH GLOW EFFECT
+document.addEventListener("touchstart", function(e){
+
+    let glow = document.createElement("div");
+
+    glow.style.position = "fixed";
+    glow.style.left = e.touches[0].clientX + "px";
+    glow.style.top = e.touches[0].clientY + "px";
+
+    glow.style.width = "20px";
+    glow.style.height = "20px";
+
+    glow.style.background = "rgba(78,115,223,0.6)";
+    glow.style.borderRadius = "50%";
+
+    glow.style.pointerEvents = "none";
+    glow.style.boxShadow = "0 0 20px #4e73df";
+    glow.style.zIndex = "9999";
+
+    document.body.appendChild(glow);
+
+    setTimeout(()=>{
+        glow.remove();
+    }, 400);
+
+});
+
+
 
 
 // ================= TYPING =================
@@ -291,5 +330,17 @@ function prevImage(){
 currentImage=(currentImage-1+images.length)%images.length;
 
 document.getElementById("modalImage").src=images[currentImage];
+
+}
+
+window.onclick=function(e){
+
+let modal=document.getElementById("projectModal");
+
+if(e.target==modal){
+
+modal.style.display="none";
+
+}
 
 }
