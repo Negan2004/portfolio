@@ -1,6 +1,4 @@
-/* =========================
-   RESET
-========================= */
+/* ================= RESET ================= */
 
 *{
 margin:0;
@@ -11,28 +9,37 @@ box-sizing:border-box;
 body{
 
 font-family:'Poppins',sans-serif;
+
 background:#020617;
-color:#fff;
+
+color:white;
+
 overflow-x:hidden;
 
 }
 
 
-/* =========================
-   LOADER
-========================= */
+/* ================= LOADER ================= */
 
 #loader{
 
 position:fixed;
+
 width:100%;
+
 height:100%;
+
 background:#020617;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 z-index:9999;
-transition:opacity 0.5s;
+
+transition:0.5s;
 
 }
 
@@ -42,135 +49,87 @@ width:60px;
 height:60px;
 
 border:4px solid rgba(255,255,255,0.1);
+
 border-top:4px solid #4e73df;
 
 border-radius:50%;
 
 animation:spin 1s linear infinite;
 
+margin:auto;
+margin-bottom:20px;
+
 }
 
 @keyframes spin{
 
-to{
-transform:rotate(360deg);
-}
+100%{ transform:rotate(360deg); }
 
 }
 
 
-/* =========================
-   PARTICLES BACKGROUND
-========================= */
+/* ================= PARTICLES ================= */
 
 #particles-js{
 
 position:fixed;
+
 width:100%;
+
 height:100%;
-z-index:-2;
 
-background:
-radial-gradient(circle at 30% 30%, rgba(78,115,223,0.15), transparent),
-#020617;
+z-index:-1;
 
-}
-
-
-/* =========================
-   PROGRESS BAR
-========================= */
-
-#progress-bar{
-
-position:fixed;
-top:0;
-left:0;
-height:3px;
-width:0%;
-
-background:
-linear-gradient(90deg,#4e73df,#00c6ff);
-
-z-index:999;
+background:linear-gradient(135deg,#020617,#0f172a);
 
 }
 
 
-/* =========================
-   CURSOR
-========================= */
-
-.cursor{
-
-position:fixed;
-width:18px;
-height:18px;
-
-border-radius:50%;
-background:rgba(78,115,223,0.7);
-
-pointer-events:none;
-z-index:9999;
-
-box-shadow:
-0 0 20px rgba(78,115,223,0.9);
-
-}
-
-@media(max-width:768px){
-
-.cursor{
-display:none;
-}
-
-}
-
-
-/* =========================
-   SIDEBAR
-========================= */
+/* ================= SIDEBAR ================= */
 
 .sidebar{
 
 position:fixed;
+
 left:0;
 top:0;
 
 width:280px;
+
 height:100%;
 
-background:#070d1a;
+background:#020617;
 
 padding:30px;
 
-display:flex;
-flex-direction:column;
-align-items:center;
+border-right:1px solid rgba(255,255,255,0.05);
+
+transition:0.3s;
 
 z-index:1000;
 
 }
 
+.profile{
 
-/* =========================
-   PROFILE IMAGE PERFECT FIX
-========================= */
+text-align:center;
+
+}
 
 .profile-image{
 
-width:150px;
-height:150px;
+width:140px;
+height:140px;
 
 border-radius:50%;
+
 overflow:hidden;
+
+margin:auto;
 
 border:3px solid #4e73df;
 
-box-shadow:
-0 0 30px rgba(78,115,223,0.8);
-
-margin-bottom:15px;
+box-shadow:0 0 25px rgba(78,115,223,0.6);
 
 }
 
@@ -180,272 +139,173 @@ width:100%;
 height:100%;
 
 object-fit:cover;
-object-position:center top;
 
 }
 
+.profile h2{
 
-/* =========================
-   NAME GRADIENT
-========================= */
-
-.gradient-text{
-
-background:
-linear-gradient(45deg,#4e73df,#00c6ff);
-
--webkit-background-clip:text;
-color:transparent;
+margin-top:15px;
 
 }
-
-
-/* =========================
-   RESUME BUTTON
-========================= */
 
 .resume-btn{
 
 display:inline-block;
 
-margin-top:20px;
-margin-bottom:30px;
+margin-top:15px;
 
-padding:12px 25px;
+padding:10px 20px;
 
-background:
-linear-gradient(45deg,#4e73df,#6f42c1);
+background:linear-gradient(45deg,#4e73df,#6f42c1);
 
-border-radius:10px;
+border-radius:8px;
 
 color:white;
+
 text-decoration:none;
 
-transition:0.3s;
-
-}
-
-.resume-btn:hover{
-
-transform:scale(1.08);
-
-box-shadow:
-0 0 30px rgba(78,115,223,0.8);
-
 }
 
 
-/* =========================
-   NAVIGATION
-========================= */
+/* ================= NAV ================= */
 
 nav{
-width:100%;
+
+margin-top:30px;
+
 }
 
 nav a{
 
 display:block;
+
+color:#94a3b8;
+
 padding:10px;
 
-color:#aaa;
 text-decoration:none;
 
 border-radius:6px;
 
-margin-bottom:5px;
-
 }
 
-nav a:hover,
-nav a.active{
+nav a:hover{
 
-background:#4e73df;
+background:#111a33;
+
 color:white;
 
 }
 
 
-/* =========================
-   MAIN CONTENT
-========================= */
+/* ================= MAIN ================= */
 
 .main{
 
 margin-left:280px;
+
 padding:60px;
 
 }
 
 
-/* =========================
-   HERO PREMIUM
-========================= */
+/* ================= HERO ================= */
 
-.hero-premium{
+.hero{
 
 height:100vh;
 
 display:flex;
-justify-content:center;
-align-items:center;
 
-position:relative;
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
 
 text-align:center;
 
 }
 
-
-/* glow lighting */
-
-.hero-glow{
-
-position:absolute;
-
-width:600px;
-height:600px;
-
-background:
-radial-gradient(circle,
-rgba(78,115,223,0.3),
-transparent);
-
-filter:blur(120px);
-
-animation:glowMove 6s infinite alternate;
-
-}
-
-@keyframes glowMove{
-
-from{
-transform:translateY(-50px);
-}
-
-to{
-transform:translateY(50px);
-}
-
-}
-
-
-/* hero text */
-
 .hero-title{
 
 font-size:48px;
-font-weight:700;
 
-margin-bottom:10px;
+background:linear-gradient(45deg,#4e73df,#00c6ff);
 
-animation:fadeUp 1s;
+-webkit-background-clip:text;
+
+color:transparent;
 
 }
 
 .hero-role{
 
-color:#94a3b8;
-margin-bottom:10px;
+margin-top:10px;
 
-animation:fadeUp 1.5s;
+color:#94a3b8;
 
 }
 
 .hero-desc{
 
-color:#64748b;
-margin-bottom:20px;
+margin-top:15px;
 
-animation:fadeUp 2s;
+color:#64748b;
 
 }
 
 .hero-btn{
 
+display:inline-block;
+
+margin-top:25px;
+
 padding:12px 30px;
 
-background:
-linear-gradient(45deg,#4e73df,#00c6ff);
+background:linear-gradient(45deg,#4e73df,#6f42c1);
 
-border-radius:10px;
+border-radius:8px;
 
 color:white;
+
 text-decoration:none;
 
-transition:0.3s;
-
-}
-
-.hero-btn:hover{
-
-transform:scale(1.1);
-
-box-shadow:
-0 0 40px rgba(78,115,223,0.8);
-
 }
 
 
-/* =========================
-   SECTIONS
-========================= */
+/* ================= SECTION ================= */
 
 .section{
 
 margin-bottom:80px;
 
 opacity:0;
+
 transform:translateY(40px);
 
-transition:1s;
+transition:0.6s;
 
 }
 
 .section.show{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
 
 
-/* =========================
-   SKILLS FIXED
-========================= */
-
-.skills{
-
-display:flex;
-flex-wrap:wrap;
-gap:12px;
-
-}
-
-.skills span{
-
-padding:8px 16px;
-
-background:
-linear-gradient(45deg,#4e73df,#6f42c1);
-
-border-radius:20px;
-
-opacity:1 !important;
-transform:none !important;
-
-}
-
-
-/* =========================
-   CARD
-========================= */
+/* ================= CARD ================= */
 
 .card{
 
-padding:20px;
-
 background:rgba(255,255,255,0.03);
+
+border:1px solid rgba(255,255,255,0.05);
+
+padding:20px;
 
 border-radius:10px;
 
@@ -457,37 +317,70 @@ transition:0.3s;
 
 .card:hover{
 
-transform:translateY(-8px);
+transform:translateY(-5px);
 
-box-shadow:
-0 0 30px rgba(78,115,223,0.4);
+box-shadow:0 0 25px rgba(78,115,223,0.3);
 
 }
 
 
-/* =========================
-   CERTIFICATE
-========================= */
+/* ================= GRID ================= */
 
-.cert{
+.grid{
 
-max-width:400px;
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:20px;
+
+}
+
+
+/* ================= SKILLS ================= */
+
+.skills{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
 margin-top:20px;
+
+}
+
+.skills span{
+
+padding:8px 16px;
+
+background:linear-gradient(45deg,#4e73df,#6f42c1);
+
+border-radius:20px;
+
+}
+
+
+/* ================= CERT ================= */
+
+.cert-card img{
+
+width:100%;
 
 border-radius:10px;
 
 }
 
 
-/* =========================
-   MODAL
-========================= */
+/* ================= MODAL ================= */
 
 .modal{
 
 display:none;
 
 position:fixed;
+
 top:0;
 left:0;
 
@@ -497,83 +390,94 @@ height:100%;
 background:rgba(0,0,0,0.9);
 
 justify-content:center;
+
 align-items:center;
+
+z-index:9999;
 
 }
 
-.modal-content img{
+.modal img{
 
-max-width:90vw;
-max-height:80vh;
+max-width:80%;
 
 border-radius:10px;
 
 }
 
+.close{
 
-/* =========================
-   MOBILE
-========================= */
+position:absolute;
+
+top:20px;
+right:40px;
+
+font-size:40px;
+
+cursor:pointer;
+
+}
+
+
+/* ================= MENU BUTTON ================= */
 
 .menu-toggle{
 
 display:none;
 
 position:fixed;
-top:15px;
-left:15px;
+
+top:20px;
+left:20px;
 
 background:#4e73df;
+
+border:none;
 
 color:white;
 
 padding:10px;
 
-border:none;
+border-radius:6px;
 
 z-index:2000;
 
 }
 
+
+/* ================= MOBILE ================= */
+
 @media(max-width:768px){
 
 .sidebar{
+
 left:-280px;
+
 }
 
 .sidebar.active{
-left:0;
-}
 
-.main{
-margin-left:0;
-padding:20px;
+left:0;
+
 }
 
 .menu-toggle{
+
 display:block;
-}
 
 }
 
+.main{
 
-/* =========================
-   ANIMATION
-========================= */
+margin-left:0;
 
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-transform:translateY(40px);
+padding:30px;
 
 }
 
-to{
+.hero-title{
 
-opacity:1;
-transform:translateY(0);
+font-size:32px;
 
 }
 
