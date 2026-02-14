@@ -1,41 +1,93 @@
+window.addEventListener("load", function(){
+
+document.getElementById("loader").style.display="none";
+
+});
+
+window.onscroll=function(){
+
+let scrollTop=document.documentElement.scrollTop;
+
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+
+let progress=(scrollTop/height)*100;
+
+document.getElementById("progress-bar").style.width=progress+"%";
+
+};
+
+document.addEventListener("mousemove", function(e){
+
+document.querySelector(".cursor").style.left=e.clientX+"px";
+
+document.querySelector(".cursor").style.top=e.clientY+"px";
+
+});
+
 // ==========================
 // TYPING ANIMATION
 // ==========================
 
 const roles = [
+
 "Java Full Stack Developer",
+
 "Backend Developer",
+
+"REST API Developer",
+
+"Java & MySQL Specialist",
+
 "Software Developer"
+
 ];
 
 let roleIndex = 0;
+
 let charIndex = 0;
-const typingElement = document.getElementById("typing");
 
-function type(){
-if(charIndex < roles[roleIndex].length){
-typingElement.innerHTML += roles[roleIndex].charAt(charIndex);
-charIndex++;
-setTimeout(type,50);
+let deleting = false;
+
+function typeEffect(){
+
+const currentRole = roles[roleIndex];
+
+if(!deleting){
+
+document.getElementById("typing").textContent =
+currentRole.substring(0,charIndex++);
+
+if(charIndex > currentRole.length){
+
+deleting = true;
+
+setTimeout(typeEffect,1500);
+
+return;
+
+}
+
 }else{
-setTimeout(erase,1500);
-}
+
+document.getElementById("typing").textContent =
+currentRole.substring(0,charIndex--);
+
+if(charIndex === 0){
+
+deleting = false;
+
+roleIndex = (roleIndex+1)%roles.length;
+
 }
 
-function erase(){
-if(charIndex > 0){
-typingElement.innerHTML =
-roles[roleIndex].substring(0,charIndex-1);
-charIndex--;
-setTimeout(erase,30);
-}else{
-roleIndex++;
-if(roleIndex >= roles.length) roleIndex = 0;
-setTimeout(type,300);
-}
 }
 
-type();
+setTimeout(typeEffect, deleting ? 50 : 100);
+
+}
+
+typeEffect();
+
 
 
 // ==========================
@@ -174,5 +226,65 @@ onhover:{ enable:true, mode:"repulse" }
 }
 
 }
+
+});
+
+let images = [
+
+"images/project1.png",
+
+"images/project2.png",
+
+"images/project3.png"
+
+];
+
+let currentImage = 0;
+
+function openModal(){
+
+document.getElementById("projectModal").style.display="flex";
+
+document.getElementById("modalImage").src = images[currentImage];
+
+}
+
+function closeModal(){
+
+document.getElementById("projectModal").style.display="none";
+
+}
+
+function nextImage(){
+
+currentImage=(currentImage+1)%images.length;
+
+document.getElementById("modalImage").src = images[currentImage];
+
+}
+
+function prevImage(){
+
+currentImage=(currentImage-1+images.length)%images.length;
+
+document.getElementById("modalImage").src = images[currentImage];
+
+}
+
+const sections = document.querySelectorAll(".section");
+
+window.addEventListener("scroll", ()=>{
+
+sections.forEach(sec=>{
+
+const top = sec.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 100){
+
+sec.classList.add("show");
+
+}
+
+});
 
 });

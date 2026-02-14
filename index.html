@@ -14,6 +14,24 @@
 </head>
 
 <body>
+    <div id="loader">
+
+    <div class="loader-content">
+
+        <div class="loader-circle"></div>
+
+        <h2>Samarth Sharma</h2>
+
+        <p>Loading Portfolio...</p>
+
+    </div>
+
+</div>
+
+<div id="progress-bar"></div>
+
+<div class="cursor"></div>
+
 <div id="particles-js"></div>
 
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -26,9 +44,12 @@
 
 <img src="images/samarth.jpeg">
 
-<h2>Samarth Sharma</h2>
+<h2 class="gradient-text">Samarth Sharma</h2>
 
-<p><span id="typing"></span></p>
+<p class="typing-text">
+<span id="typing"></span><span class="cursor-blink">|</span>
+</p>
+
 
 <a href="MY_Resume.pdf" download class="resume-btn">
 Download Resume
@@ -140,9 +161,13 @@ Java Full Stack application with Admin panel, CRUD, and GitHub API integration.
 
 </p>
 
+<button class="view-btn" onclick="openModal()">
+View Details
+</button>
+
 <a href="https://github.com/Negan2004/project-idea-generator-java">
 
-View GitHub →
+GitHub →
 
 </a>
 
@@ -194,6 +219,26 @@ PHP and MySQL based review application.
 
 <script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<div id="projectModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">×</span>
+
+<img id="modalImage" src="images/project1.png">
+
+<div class="modal-buttons">
+
+<button onclick="prevImage()">←</button>
+
+<button onclick="nextImage()">→</button>
+
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
