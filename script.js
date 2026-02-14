@@ -1,87 +1,38 @@
 // ================= LOADER =================
 
-window.addEventListener("load", () => {
+window.addEventListener("load", function(){
 
-    const loader = document.getElementById("loader");
+const loader = document.getElementById("loader");
 
-    setTimeout(() => {
-        loader.style.opacity = "0";
+if(loader){
 
-        setTimeout(() => {
-            loader.style.display = "none";
-        }, 400);
+loader.style.opacity="0";
 
-    }, 600);
+setTimeout(()=>{
+
+loader.style.display="none";
+
+},400);
+
+}
 
 });
 
-
-// ================= PARTICLES =================
-
-if (typeof particlesJS !== "undefined") {
-
-    particlesJS("particles-js", {
-
-        particles: {
-            number: { value: 70 },
-            color: { value: "#3b82f6" },
-            shape: { type: "circle" },
-
-            opacity: {
-                value: 0.4,
-                random: true
-            },
-
-            size: {
-                value: 3,
-                random: true
-            },
-
-            move: {
-                enable: true,
-                speed: 1,
-                direction: "none",
-                random: true,
-                out_mode: "out"
-            },
-
-            line_linked: {
-                enable: true,
-                distance: 150,
-                color: "#3b82f6",
-                opacity: 0.2,
-                width: 1
-            }
-
-        },
-
-        interactivity: {
-
-            events: {
-
-                onhover: {
-                    enable: true,
-                    mode: "repulse"
-                }
-
-            }
-
-        }
-
-    });
-
-}
 
 
 // ================= TYPING EFFECT =================
 
 const roles = [
 
-    "Java Full Stack Developer",
-    "Backend Developer",
-    "REST API Developer",
-    "MySQL Specialist",
-    "Software Developer"
+"Java Full Stack Developer",
+
+"Backend Developer",
+
+"REST API Developer",
+
+"MySQL Specialist",
+
+"Software Developer"
 
 ];
 
@@ -89,259 +40,233 @@ let roleIndex = 0;
 let charIndex = 0;
 let deleting = false;
 
-function typeEffect() {
+function typeEffect(){
 
-    const element = document.getElementById("typing");
+const element = document.getElementById("typing");
 
-    if (!element) return;
+if(!element) return;
 
-    const current = roles[roleIndex];
+let current = roles[roleIndex];
 
-    if (!deleting) {
+if(!deleting){
 
-        element.textContent = current.substring(0, charIndex++);
+element.textContent = current.substring(0,charIndex++);
 
-        if (charIndex > current.length) {
+if(charIndex > current.length){
 
-            deleting = true;
+deleting = true;
+setTimeout(typeEffect,1200);
+return;
 
-            setTimeout(typeEffect, 1500);
-            return;
+}
 
-        }
+}
+else{
 
-    } else {
+element.textContent = current.substring(0,charIndex--);
 
-        element.textContent = current.substring(0, charIndex--);
+if(charIndex === 0){
 
-        if (charIndex === 0) {
+deleting = false;
+roleIndex = (roleIndex + 1) % roles.length;
 
-            deleting = false;
-            roleIndex = (roleIndex + 1) % roles.length;
+}
 
-        }
+}
 
-    }
-
-    setTimeout(typeEffect, deleting ? 50 : 100);
+setTimeout(typeEffect, deleting ? 40 : 80);
 
 }
 
 typeEffect();
 
 
+
+
 // ================= MOBILE MENU =================
 
-function toggleMenu() {
+function toggleMenu(){
 
-    document.querySelector(".sidebar")
-        .classList.toggle("active");
+document.querySelector(".sidebar").classList.toggle("active");
 
 }
 
 
-// close after click
 
-document.querySelectorAll(".sidebar nav a")
-.forEach(link => {
+// ================= CLOSE MENU ON CLICK =================
 
-    link.addEventListener("click", () => {
+document.querySelectorAll(".sidebar nav a").forEach(link=>{
 
-        document.querySelector(".sidebar")
-        .classList.remove("active");
+link.addEventListener("click", ()=>{
 
-    });
+document.querySelector(".sidebar").classList.remove("active");
+
+});
 
 });
 
 
-// ================= SMOOTH SCROLL =================
 
-document.querySelectorAll('a[href^="#"]')
-.forEach(anchor => {
 
-    anchor.addEventListener("click", function(e) {
+// ================= SCROLL REVEAL =================
 
-        e.preventDefault();
+const reveals = document.querySelectorAll(".section");
 
-        const target = document.querySelector(
-            this.getAttribute("href")
-        );
+function reveal(){
 
-        if (target) {
+reveals.forEach(section=>{
 
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
+let top = section.getBoundingClientRect().top;
 
-        }
+if(top < window.innerHeight - 80){
 
-    });
+section.classList.add("show");
+
+}
 
 });
+
+}
+
+window.addEventListener("scroll", reveal);
+reveal();
+
+
 
 
 // ================= ACTIVE NAV =================
 
 const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".sidebar nav a");
 
-const navLinks =
-document.querySelectorAll(".sidebar nav a");
+window.addEventListener("scroll", ()=>{
 
+let current = "";
 
-window.addEventListener("scroll", () => {
+sections.forEach(sec=>{
 
-    let current = "";
+let top = sec.offsetTop - 200;
 
-    sections.forEach(section => {
+if(pageYOffset >= top){
 
-        const top = section.offsetTop;
+current = sec.id;
 
-        if (pageYOffset >= top - 200) {
+}
 
-            current = section.id;
+});
 
-        }
+navLinks.forEach(link=>{
 
-    });
+link.classList.remove("active");
 
-    navLinks.forEach(link => {
+if(link.getAttribute("href") === "#" + current){
 
-        link.classList.remove("active");
+link.classList.add("active");
 
-        if (link.getAttribute("href") === "#" + current) {
+}
 
-            link.classList.add("active");
-
-        }
-
-    });
+});
 
 });
 
 
-// ================= SCROLL REVEAL =================
 
-const reveals =
-document.querySelectorAll(
-".section, .card, .skills span, .cert"
-);
 
-function revealElements() {
+// ================= SMOOTH SCROLL =================
 
-    reveals.forEach(el => {
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
-        const top =
-        el.getBoundingClientRect().top;
+anchor.addEventListener("click", function(e){
 
-        if (top < window.innerHeight - 80) {
+e.preventDefault();
 
-            el.classList.add("show");
+const target = document.querySelector(this.getAttribute("href"));
 
-        }
+if(target){
 
-    });
+target.scrollIntoView({
+
+behavior:"smooth"
+
+});
 
 }
 
-window.addEventListener("scroll", revealElements);
+});
 
-revealElements();
+});
+
+
+
+
+// ================= PARTICLES =================
+
+if(typeof particlesJS !== "undefined"){
+
+particlesJS("particles-js", {
+
+particles:{
+
+number:{value:70},
+
+color:{value:"#3b82f6"},
+
+shape:{type:"circle"},
+
+opacity:{value:0.4},
+
+size:{value:3},
+
+move:{speed:1}
+
+},
+
+interactivity:{
+
+events:{onhover:{enable:true,mode:"repulse"}}
+
+}
+
+});
+
+}
+
+
 
 
 // ================= MODAL =================
 
-let images = [
+let modal = document.getElementById("projectModal");
+let modalImg = document.getElementById("modalImage");
 
-    "images/project1.png",
-    "images/project2.png",
-    "images/project3.png"
+function openModal(){
 
-];
+if(modal){
 
-let currentImage = 0;
+modal.style.display="flex";
 
-function openModal(index = 0) {
-
-    currentImage = index;
-
-    const modal =
-    document.getElementById("projectModal");
-
-    const img =
-    document.getElementById("modalImage");
-
-    img.src = images[currentImage];
-
-    modal.style.display = "flex";
+modalImg.src="images/project1.png";
 
 }
 
-function closeModal() {
-
-    document.getElementById("projectModal")
-    .style.display = "none";
-
 }
 
-function nextImage() {
+function closeModal(){
 
-    currentImage =
-    (currentImage + 1) % images.length;
-
-    document.getElementById("modalImage")
-    .src = images[currentImage];
-
-}
-
-function prevImage() {
-
-    currentImage =
-    (currentImage - 1 + images.length)
-    % images.length;
-
-    document.getElementById("modalImage")
-    .src = images[currentImage];
+modal.style.display="none";
 
 }
 
 
-// close on outside click
 
-window.onclick = function(e) {
+// close when clicking outside
 
-    const modal =
-    document.getElementById("projectModal");
+window.onclick=function(e){
 
-    if (e.target === modal) {
+if(e.target == modal){
 
-        modal.style.display = "none";
+modal.style.display="none";
 
-    }
+}
 
 };
-
-
-// ================= APPLE SMOOTH SCROLL =================
-
-let scrollTarget = window.scrollY;
-let currentScroll = window.scrollY;
-
-function smoothScroll() {
-
-    currentScroll +=
-    (scrollTarget - currentScroll) * 0.08;
-
-    window.scrollTo(0, currentScroll);
-
-    requestAnimationFrame(smoothScroll);
-
-}
-
-window.addEventListener("wheel", e => {
-
-    scrollTarget += e.deltaY;
-
-});
-
-smoothScroll();
