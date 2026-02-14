@@ -11,27 +11,25 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-
 </head>
 
 <body>
 
+
 <!-- LOADER -->
 <div id="loader">
-<div class="loader-content">
-<div class="loader-circle"></div>
-<h2>Samarth Sharma</h2>
-<p>Loading Portfolio...</p>
-</div>
+    <div class="loader-content">
+        <div class="loader-circle"></div>
+        <h2>Samarth Sharma</h2>
+    </div>
 </div>
 
 
-<!-- PARTICLES -->
+<!-- PARTICLES BACKGROUND -->
 <div id="particles-js"></div>
 
 
-<!-- MENU BUTTON -->
+<!-- MOBILE MENU -->
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 
@@ -41,12 +39,14 @@
 <div class="profile">
 
 <div class="profile-image">
-<img src="images/samarth.jpeg">
+<img src="images/samarth.jpeg" alt="Samarth Sharma">
 </div>
 
 <h2>Samarth Sharma</h2>
 
-<p id="typing"></p>
+<p class="typing-text">
+<span id="typing"></span>
+</p>
 
 <a href="MY_Resume.pdf" download class="resume-btn">
 Download Resume
@@ -85,7 +85,7 @@ Java Full Stack Developer
 </h2>
 
 <p class="hero-desc">
-I build scalable backend systems and modern web applications.
+Building scalable backend systems, REST APIs, and modern web applications.
 </p>
 
 <a href="#projects" class="hero-btn">
@@ -105,11 +105,11 @@ Explore My Work
 
 <p>
 
-Entry-level Java Full Stack Developer currently pursuing MCA with hands-on experience in building dynamic web applications using Java, JSP, Servlets, MySQL, and Bootstrap.
+Entry-level Java Full Stack Developer with hands-on experience building dynamic web applications using Java, JSP, Servlets, MySQL, and Bootstrap.
 
-Developed real-world projects with Admin authentication, CRUD operations, REST API integration, and secure session management.
+Developed real-world full stack projects with Admin authentication, CRUD operations, and REST API integration.
 
-Actively seeking an opportunity to contribute to a professional software development team.
+Passionate about clean code, scalable backend systems, and continuously improving technical skills. Actively seeking opportunity to contribute and grow in professional software development environment.
 
 </p>
 
@@ -130,6 +130,7 @@ Actively seeking an opportunity to contribute to a professional software develop
 <span>JSP</span>
 <span>Servlets</span>
 <span>MySQL</span>
+<span>REST API</span>
 <span>HTML</span>
 <span>CSS</span>
 <span>Bootstrap</span>
@@ -149,33 +150,58 @@ Actively seeking an opportunity to contribute to a professional software develop
 
 <div class="grid">
 
-
-<div class="card project-card">
+<!-- PROJECT 1 -->
+<div class="card">
 
 <h3>Project Idea Generator</h3>
 
-<p>Java Full Stack application with Admin panel and GitHub API integration.</p>
+<p>
+
+Full Stack Java web application using JSP, Servlets, MySQL, and GitHub REST API.
+
+Includes Admin authentication, CRUD operations, dynamic project idea generation.
+
+</p>
+
+<div class="project-buttons">
 
 <button onclick="openModal(0)" class="btn">
 View Details
 </button>
 
-<a href="https://github.com/Negan2004/project-idea-generator-java" target="_blank">
+<a href="https://github.com/Negan2004/project-idea-generator-java"
+target="_blank"
+class="btn btn-outline">
 GitHub →
 </a>
 
 </div>
 
+</div>
 
 
-<div class="card project-card">
+
+<!-- PROJECT 2 -->
+<div class="card">
 
 <h3>Movie Review System</h3>
 
-<p>PHP and MySQL based review application.</p>
+<p>
+
+Web application built using PHP and MySQL allowing users to browse movies,
+view details, and read reviews. Includes database integration and responsive UI.
+
+</p>
+
+<div class="project-buttons">
+
+<button onclick="openModal(1)" class="btn">
+View Details
+</button>
 
 </div>
 
+</div>
 
 </div>
 
@@ -192,10 +218,12 @@ GitHub →
 
 <div class="card cert-card">
 <img src="images/Full_Stack.jpg">
+<p>Java Full Stack Certificate</p>
 </div>
 
 <div class="card cert-card">
 <img src="images/RDBMS.png">
+<p>RDBMS Training Certificate</p>
 </div>
 
 </div>
@@ -212,11 +240,13 @@ GitHub →
 <div class="card">
 
 <p>Email: samugsharma1111@gmail.com</p>
+
 <p>GitHub: github.com/Negan2004</p>
 
 </div>
 
 </section>
+
 
 
 </div>
@@ -234,7 +264,9 @@ GitHub →
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 <script src="script.js"></script>
+
 
 </body>
 </html>

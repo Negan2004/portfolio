@@ -1,9 +1,15 @@
-/* ================= RESET ================= */
+/* =========================
+GLOBAL RESET
+========================= */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
@@ -12,14 +18,16 @@ font-family:'Poppins',sans-serif;
 
 background:#020617;
 
-color:white;
+color:#e2e8f0;
 
 overflow-x:hidden;
 
 }
 
 
-/* ================= LOADER ================= */
+/* =========================
+LOADER
+========================= */
 
 #loader{
 
@@ -39,13 +47,12 @@ align-items:center;
 
 z-index:9999;
 
-transition:0.5s;
-
 }
 
 .loader-circle{
 
 width:60px;
+
 height:60px;
 
 border:4px solid rgba(255,255,255,0.1);
@@ -56,19 +63,18 @@ border-radius:50%;
 
 animation:spin 1s linear infinite;
 
-margin:auto;
-margin-bottom:20px;
-
 }
 
 @keyframes spin{
 
-100%{ transform:rotate(360deg); }
+to{transform:rotate(360deg);}
 
 }
 
 
-/* ================= PARTICLES ================= */
+/* =========================
+ANIMATED BACKGROUND
+========================= */
 
 #particles-js{
 
@@ -78,21 +84,48 @@ width:100%;
 
 height:100%;
 
+z-index:-2;
+
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:200%;
+
+height:200%;
+
+background:
+
+radial-gradient(circle at 30% 40%, rgba(78,115,223,0.15), transparent 40%),
+
+radial-gradient(circle at 70% 60%, rgba(111,66,193,0.15), transparent 40%);
+
+animation:bgMove 20s linear infinite;
+
 z-index:-1;
 
-background:linear-gradient(135deg,#020617,#0f172a);
+}
+
+@keyframes bgMove{
+
+0%{transform:translate(0,0);}
+50%{transform:translate(-10%,-10%);}
+100%{transform:translate(0,0);}
 
 }
 
 
-/* ================= SIDEBAR ================= */
+/* =========================
+SIDEBAR
+========================= */
 
 .sidebar{
 
 position:fixed;
-
-left:0;
-top:0;
 
 width:280px;
 
@@ -100,53 +133,75 @@ height:100%;
 
 background:#020617;
 
-padding:30px;
-
 border-right:1px solid rgba(255,255,255,0.05);
 
-transition:0.3s;
+padding:30px 20px;
+
+text-align:center;
 
 z-index:1000;
 
 }
 
-.profile{
 
-text-align:center;
-
-}
+/* PROFILE IMAGE PERFECT ALIGN */
 
 .profile-image{
 
 width:140px;
+
 height:140px;
+
+margin:auto;
 
 border-radius:50%;
 
 overflow:hidden;
 
-margin:auto;
-
 border:3px solid #4e73df;
 
-box-shadow:0 0 25px rgba(78,115,223,0.6);
+box-shadow:0 0 30px rgba(78,115,223,0.6);
 
 }
 
 .profile-image img{
 
 width:100%;
+
 height:100%;
 
 object-fit:cover;
 
+object-position:center;
+
+display:block;
+
 }
+
+
+/* NAME */
 
 .profile h2{
 
 margin-top:15px;
 
+font-size:22px;
+
 }
+
+
+/* TYPING TEXT */
+
+.typing-text{
+
+color:#94a3b8;
+
+margin-top:5px;
+
+}
+
+
+/* RESUME BUTTON */
 
 .resume-btn{
 
@@ -164,10 +219,20 @@ color:white;
 
 text-decoration:none;
 
+transition:0.3s;
+
+}
+
+.resume-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 25px rgba(78,115,223,0.5);
+
 }
 
 
-/* ================= NAV ================= */
+/* NAV */
 
 nav{
 
@@ -179,26 +244,30 @@ nav a{
 
 display:block;
 
-color:#94a3b8;
-
 padding:10px;
+
+color:#94a3b8;
 
 text-decoration:none;
 
 border-radius:6px;
 
+transition:0.3s;
+
 }
 
 nav a:hover{
 
-background:#111a33;
+background:#0f172a;
 
 color:white;
 
 }
 
 
-/* ================= MAIN ================= */
+/* =========================
+MAIN
+========================= */
 
 .main{
 
@@ -209,7 +278,9 @@ padding:60px;
 }
 
 
-/* ================= HERO ================= */
+/* =========================
+HERO
+========================= */
 
 .hero{
 
@@ -221,15 +292,13 @@ flex-direction:column;
 
 justify-content:center;
 
-align-items:center;
-
-text-align:center;
-
 }
 
 .hero-title{
 
 font-size:48px;
+
+font-weight:700;
 
 background:linear-gradient(45deg,#4e73df,#00c6ff);
 
@@ -245,6 +314,8 @@ margin-top:10px;
 
 color:#94a3b8;
 
+font-size:22px;
+
 }
 
 .hero-desc{
@@ -252,6 +323,8 @@ color:#94a3b8;
 margin-top:15px;
 
 color:#64748b;
+
+max-width:500px;
 
 }
 
@@ -261,55 +334,74 @@ display:inline-block;
 
 margin-top:25px;
 
-padding:12px 30px;
+padding:12px 28px;
 
 background:linear-gradient(45deg,#4e73df,#6f42c1);
 
-border-radius:8px;
+border-radius:10px;
 
 color:white;
 
 text-decoration:none;
 
+transition:0.3s;
+
+}
+
+.hero-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 40px rgba(78,115,223,0.5);
+
 }
 
 
-/* ================= SECTION ================= */
+/* =========================
+SECTION
+========================= */
 
 .section{
 
 margin-bottom:80px;
 
-opacity:0;
-
-transform:translateY(40px);
-
-transition:0.6s;
-
 }
 
-.section.show{
+.section h1{
 
-opacity:1;
-
-transform:translateY(0);
+margin-bottom:20px;
 
 }
 
 
-/* ================= CARD ================= */
+/* =========================
+GRID
+========================= */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:20px;
+
+}
+
+
+/* =========================
+CARD
+========================= */
 
 .card{
 
 background:rgba(255,255,255,0.03);
 
-border:1px solid rgba(255,255,255,0.05);
-
 padding:20px;
 
-border-radius:10px;
+border-radius:12px;
 
-margin-top:20px;
+border:1px solid rgba(255,255,255,0.05);
 
 transition:0.3s;
 
@@ -319,25 +411,14 @@ transition:0.3s;
 
 transform:translateY(-5px);
 
-box-shadow:0 0 25px rgba(78,115,223,0.3);
+box-shadow:0 10px 30px rgba(78,115,223,0.3);
 
 }
 
 
-/* ================= GRID ================= */
-
-.grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
-gap:20px;
-
-}
-
-
-/* ================= SKILLS ================= */
+/* =========================
+SKILLS
+========================= */
 
 .skills{
 
@@ -347,33 +428,82 @@ flex-wrap:wrap;
 
 gap:10px;
 
-margin-top:20px;
-
 }
 
 .skills span{
 
 padding:8px 16px;
 
+border-radius:20px;
+
 background:linear-gradient(45deg,#4e73df,#6f42c1);
 
-border-radius:20px;
+font-size:14px;
 
 }
 
 
-/* ================= CERT ================= */
+/* =========================
+PROJECT BUTTONS FIX
+========================= */
+
+.project-buttons{
+
+display:flex;
+
+gap:10px;
+
+margin-top:15px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:8px 18px;
+
+background:#4e73df;
+
+border:none;
+
+border-radius:6px;
+
+color:white;
+
+cursor:pointer;
+
+text-decoration:none;
+
+}
+
+.btn-outline{
+
+background:transparent;
+
+border:1px solid #4e73df;
+
+}
+
+
+/* =========================
+CERTIFICATE
+========================= */
 
 .cert-card img{
 
 width:100%;
 
-border-radius:10px;
+border-radius:8px;
+
+margin-bottom:10px;
 
 }
 
 
-/* ================= MODAL ================= */
+/* =========================
+MODAL
+========================= */
 
 .modal{
 
@@ -382,9 +512,11 @@ display:none;
 position:fixed;
 
 top:0;
+
 left:0;
 
 width:100%;
+
 height:100%;
 
 background:rgba(0,0,0,0.9);
@@ -399,7 +531,9 @@ z-index:9999;
 
 .modal img{
 
-max-width:80%;
+max-width:90%;
+
+max-height:80%;
 
 border-radius:10px;
 
@@ -410,16 +544,21 @@ border-radius:10px;
 position:absolute;
 
 top:20px;
-right:40px;
 
-font-size:40px;
+right:30px;
+
+font-size:30px;
+
+color:white;
 
 cursor:pointer;
 
 }
 
 
-/* ================= MENU BUTTON ================= */
+/* =========================
+MOBILE
+========================= */
 
 .menu-toggle{
 
@@ -428,6 +567,7 @@ display:none;
 position:fixed;
 
 top:20px;
+
 left:20px;
 
 background:#4e73df;
@@ -444,26 +584,19 @@ z-index:2000;
 
 }
 
-
-/* ================= MOBILE ================= */
-
 @media(max-width:768px){
 
 .sidebar{
 
 left:-280px;
 
+transition:0.3s;
+
 }
 
 .sidebar.active{
 
 left:0;
-
-}
-
-.menu-toggle{
-
-display:block;
 
 }
 
@@ -475,9 +608,9 @@ padding:30px;
 
 }
 
-.hero-title{
+.menu-toggle{
 
-font-size:32px;
+display:block;
 
 }
 
