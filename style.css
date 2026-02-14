@@ -1,0 +1,118 @@
+body
+{
+margin:0;
+font-family:Poppins;
+background:#0f172a;
+color:white;
+}
+
+.sidebar
+{
+position:fixed;
+width:280px;
+height:100%;
+background:#020617;
+padding:20px;
+animation:slideIn 1s;
+}
+
+@keyframes slideIn
+{
+from{left:-300px;}
+to{left:0;}
+}
+
+.profile img
+{
+width:120px;
+border-radius:50%;
+margin-bottom:10px;
+}
+
+.resume-btn
+{
+display:block;
+background:#6366f1;
+padding:10px;
+margin-top:10px;
+text-align:center;
+border-radius:5px;
+text-decoration:none;
+color:white;
+}
+
+.sidebar nav a
+{
+display:block;
+color:#94a3b8;
+padding:10px;
+text-decoration:none;
+transition:.3s;
+}
+
+.sidebar nav a:hover
+{
+color:white;
+transform:translateX(5px);
+}
+
+.main
+{
+margin-left:300px;
+padding:40px;
+}
+
+.section
+{
+margin-bottom:80px;
+animation:fadeUp 1s;
+}
+
+@keyframes fadeUp
+{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.card
+{
+background:#020617;
+padding:20px;
+margin-top:15px;
+border-radius:10px;
+transition:.3s;
+}
+
+.card:hover
+{
+transform:scale(1.03);
+box-shadow:0 0 20px #6366f1;
+}
+
+.skills span
+{
+display:inline-block;
+background:#020617;
+padding:10px 20px;
+margin:10px;
+border-radius:20px;
+transition:.3s;
+}
+
+.skills span:hover
+{
+background:#6366f1;
+}
+
+.cert
+{
+width:300px;
+margin:20px;
+border-radius:10px;
+transition:.3s;
+}
+
+.cert:hover
+{
+transform:scale(1.05);
+}
