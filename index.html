@@ -15,121 +15,136 @@
 
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-  <div class="loader-content">
-    <div class="loader-circle"></div>
-    <h2>Samarth Sharma</h2>
-    <p>Loading Portfolio...</p>
-  </div>
+<!-- NAVBAR -->
+<nav class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">
+Samarth Sharma
 </div>
 
-<div id="progress-bar"></div>
-<div id="particles-js"></div>
+<ul class="nav-links">
 
-<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#certificates">Certificates</a></li>
+<li><a href="#contact">Contact</a></li>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
+</ul>
 
-  <div class="profile">
-
-    <div class="profile-image">
-    <div class="profile-image-inner">
-        <img src="images/samarth.jpeg" alt="Samarth Sharma">
-    </div>
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
 </div>
-
-
-    <h2 class="gradient-text">Samarth Sharma</h2>
-
-    <p class="typing-text">
-      <span id="typing"></span>
-    </p>
-
-    <a href="MY_Resume.pdf" download class="resume-btn">
-      Download Resume
-    </a>
-
-  </div>
-
-  <nav>
-
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#contact">Contact</a>
-
-  </nav>
 
 </div>
 
-<!-- MAIN -->
-<div class="main">
+</nav>
 
-<!-- HERO -->
-<section id="hero" class="hero">
 
-<h1>Hi, I'm Samarth Sharma</h1>
+<!-- HERO SECTION -->
+<section class="hero">
 
-<h2>Java Full Stack Developer</h2>
+<div class="hero-container">
 
-<p>
-Building scalable backend systems, REST APIs, and modern web applications.
+<!-- LEFT TEXT -->
+<div class="hero-left">
+
+<h1 class="hero-title">
+Hi, I'm Samarth Sharma
+</h1>
+
+<h2 class="hero-role">
+Java Full Stack Developer
+</h2>
+
+<p class="hero-desc">
+Entry-level developer specializing in Java, JSP, Servlets, MySQL, and REST API integration. Passionate about building scalable web applications and clean backend systems.
 </p>
 
-<a href="#projects" class="hero-btn">
+<div class="hero-buttons">
+
+<a href="#projects" class="btn-primary">
 Explore My Work
 </a>
 
+<a href="MY_Resume.pdf" download class="btn-secondary">
+Download Resume
+</a>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT IMAGE -->
+<div class="hero-right">
+
+<div class="profile-container">
+
+<img src="images/samarth.jpeg" alt="Samarth Sharma">
+
+</div>
+
+</div>
+
+</div>
+
 </section>
+
 
 <!-- ABOUT -->
 <section id="about" class="section">
 
-<h1>About Me</h1>
+<h2>About Me</h2>
 
 <p>
-Entry-level Java Full Stack Developer with hands-on experience building dynamic web applications using Java, JSP, Servlets, MySQL, and Bootstrap. Developed real-world projects including Admin dashboards, CRUD systems, and REST API integrations. Passionate about clean code, scalable backend architecture, and continuously improving development skills. Seeking opportunity to contribute and grow in professional software development environment.
+I am an MCA student and entry-level Java Full Stack Developer with hands-on experience building real-world applications using Java, JSP, Servlets, MySQL, and Bootstrap.
+
+I have developed dynamic systems including admin dashboards, CRUD platforms, and REST API integrations. I am passionate about writing clean, maintainable code and continuously improving my backend and full stack development skills.
+
+I am actively seeking an opportunity to contribute to a professional development team and grow as a software engineer.
 </p>
 
 </section>
 
+
 <!-- SKILLS -->
 <section id="skills" class="section">
 
-<h1>Technical Skills</h1>
+<h2>Technical Skills</h2>
 
-<div class="skills">
+<div class="skills-grid">
 
-<span>Java</span>
-<span>JSP</span>
-<span>Servlets</span>
-<span>MySQL</span>
-<span>REST API</span>
-<span>HTML</span>
-<span>CSS</span>
-<span>Bootstrap</span>
-<span>Git</span>
-<span>PHP</span>
+<div class="skill">Java</div>
+<div class="skill">JSP</div>
+<div class="skill">Servlets</div>
+<div class="skill">MySQL</div>
+<div class="skill">REST API</div>
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">Bootstrap</div>
+<div class="skill">Git</div>
+<div class="skill">PHP</div>
 
 </div>
 
 </section>
 
+
 <!-- PROJECTS -->
 <section id="projects" class="section">
 
-<h1>Projects</h1>
+<h2>Projects</h2>
+
 
 <div class="project-card">
 
 <h3>Project Idea Generator</h3>
 
 <p>
-Java Full Stack web application with Admin authentication, CRUD operations, and GitHub API integration for dynamic project idea generation.
+Java Full Stack web application with Admin authentication, CRUD operations, and GitHub REST API integration for dynamic project idea generation.
 </p>
 
 <div class="project-buttons">
@@ -141,7 +156,7 @@ View Details
 <a href="https://github.com/Negan2004/project-idea-generator-java"
 target="_blank"
 class="btn-secondary">
-GitHub →
+GitHub
 </a>
 
 </div>
@@ -154,7 +169,7 @@ GitHub →
 <h3>Movie Review System</h3>
 
 <p>
-Web application built using PHP and MySQL allowing users to browse movies, view details, and submit reviews with database integration and responsive UI.
+Full stack movie review platform built using PHP and MySQL. Includes review submission, movie listing, and responsive user interface.
 </p>
 
 <div class="project-buttons">
@@ -167,26 +182,29 @@ View Details
 
 </div>
 
+
 </section>
+
 
 <!-- CERTIFICATES -->
 <section id="certificates" class="section">
 
-<h1>Certificates</h1>
+<h2>Certificates</h2>
 
 <div class="cert-grid">
 
-<img src="images/Full_Stack.jpg" class="cert">
-<img src="images/RDBMS.png" class="cert">
+<img src="images/Full_Stack.jpg">
+<img src="images/RDBMS.png">
 
 </div>
 
 </section>
 
+
 <!-- CONTACT -->
 <section id="contact" class="section">
 
-<h1>Contact</h1>
+<h2>Contact</h2>
 
 <p>Email: samugsharma1111@gmail.com</p>
 
@@ -199,18 +217,17 @@ github.com/Negan2004
 
 </section>
 
-</div>
 
 <!-- MODAL -->
-<div id="projectModal" class="modal">
+<div id="modal" class="modal">
 
 <span class="close" onclick="closeModal()">×</span>
 
-<img id="modalImage">
+<img id="modal-img">
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
 <script src="script.js"></script>
 
 </body>

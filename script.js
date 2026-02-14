@@ -1,272 +1,157 @@
-// ================= LOADER =================
+// ===============================
+// MOBILE NAV MENU TOGGLE
+// ===============================
 
-window.addEventListener("load", function(){
-
-const loader = document.getElementById("loader");
-
-if(loader){
-
-loader.style.opacity="0";
-
-setTimeout(()=>{
-
-loader.style.display="none";
-
-},400);
-
+function toggleMenu()
+{
+    document.getElementById("navLinks").classList.toggle("active");
 }
 
+
+// ===============================
+// CLOSE MENU WHEN CLICK LINK (MOBILE)
+// ===============================
+
+document.querySelectorAll("#navLinks a").forEach(link =>
+{
+    link.addEventListener("click", () =>
+    {
+        document.getElementById("navLinks").classList.remove("active");
+    });
 });
 
 
 
-// ================= TYPING EFFECT =================
+// ===============================
+// SMOOTH SCROLL (SAFE VERSION)
+// ===============================
 
-const roles = [
+document.querySelectorAll('a[href^="#"]').forEach(anchor =>
+{
+    anchor.addEventListener("click", function(e)
+    {
+        e.preventDefault();
 
-"Java Full Stack Developer",
+        const target = document.querySelector(this.getAttribute("href"));
 
-"Backend Developer",
-
-"REST API Developer",
-
-"MySQL Specialist",
-
-"Software Developer"
-
-];
-
-let roleIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-function typeEffect(){
-
-const element = document.getElementById("typing");
-
-if(!element) return;
-
-let current = roles[roleIndex];
-
-if(!deleting){
-
-element.textContent = current.substring(0,charIndex++);
-
-if(charIndex > current.length){
-
-deleting = true;
-setTimeout(typeEffect,1200);
-return;
-
-}
-
-}
-else{
-
-element.textContent = current.substring(0,charIndex--);
-
-if(charIndex === 0){
-
-deleting = false;
-roleIndex = (roleIndex + 1) % roles.length;
-
-}
-
-}
-
-setTimeout(typeEffect, deleting ? 40 : 80);
-
-}
-
-typeEffect();
-
-
-
-
-// ================= MOBILE MENU =================
-
-function toggleMenu(){
-
-document.querySelector(".sidebar").classList.toggle("active");
-
-}
-
-
-
-// ================= CLOSE MENU ON CLICK =================
-
-document.querySelectorAll(".sidebar nav a").forEach(link=>{
-
-link.addEventListener("click", ()=>{
-
-document.querySelector(".sidebar").classList.remove("active");
-
-});
-
+        if(target)
+        {
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    });
 });
 
 
 
+// ===============================
+// PROJECT MODAL SYSTEM
+// ===============================
 
-// ================= SCROLL REVEAL =================
+let modalImages = [];
 
-const reveals = document.querySelectorAll(".section");
+let currentIndex = 0;
 
-function reveal(){
 
-reveals.forEach(section=>{
+// OPEN MODAL
 
-let top = section.getBoundingClientRect().top;
+function openModal(imagesArray)
+{
+    modalImages = imagesArray;
 
-if(top < window.innerHeight - 80){
+    currentIndex = 0;
 
-section.classList.add("show");
+    document.getElementById("modal").style.display = "flex";
 
+    document.getElementById("modalImg").src = modalImages[currentIndex];
 }
 
-});
 
+// CLOSE MODAL
+
+function closeModal()
+{
+    document.getElementById("modal").style.display = "none";
 }
 
-window.addEventListener("scroll", reveal);
-reveal();
 
+// NEXT IMAGE
 
+function nextImage()
+{
+    if(modalImages.length === 0) return;
 
+    currentIndex++;
 
-// ================= ACTIVE NAV =================
+    if(currentIndex >= modalImages.length)
+        currentIndex = 0;
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".sidebar nav a");
-
-window.addEventListener("scroll", ()=>{
-
-let current = "";
-
-sections.forEach(sec=>{
-
-let top = sec.offsetTop - 200;
-
-if(pageYOffset >= top){
-
-current = sec.id;
-
+    document.getElementById("modalImg").src = modalImages[currentIndex];
 }
 
-});
 
-navLinks.forEach(link=>{
+// PREVIOUS IMAGE
 
-link.classList.remove("active");
+function prevImage()
+{
+    if(modalImages.length === 0) return;
 
-if(link.getAttribute("href") === "#" + current){
+    currentIndex--;
 
-link.classList.add("active");
+    if(currentIndex < 0)
+        currentIndex = modalImages.length - 1;
 
-}
-
-});
-
-});
-
-
-
-
-// ================= SMOOTH SCROLL =================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-
-anchor.addEventListener("click", function(e){
-
-e.preventDefault();
-
-const target = document.querySelector(this.getAttribute("href"));
-
-if(target){
-
-target.scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-}
-
-});
-
-});
-
-
-
-
-// ================= PARTICLES =================
-
-if(typeof particlesJS !== "undefined"){
-
-particlesJS("particles-js", {
-
-particles:{
-
-number:{value:70},
-
-color:{value:"#3b82f6"},
-
-shape:{type:"circle"},
-
-opacity:{value:0.4},
-
-size:{value:3},
-
-move:{speed:1}
-
-},
-
-interactivity:{
-
-events:{onhover:{enable:true,mode:"repulse"}}
-
-}
-
-});
-
+    document.getElementById("modalImg").src = modalImages[currentIndex];
 }
 
 
 
+// ===============================
+// CLOSE MODAL WHEN CLICK OUTSIDE
+// ===============================
 
-// ================= MODAL =================
+window.onclick = function(e)
+{
+    const modal = document.getElementById("modal");
 
-let modal = document.getElementById("projectModal");
-let modalImg = document.getElementById("modalImage");
-
-function openModal(){
-
-if(modal){
-
-modal.style.display="flex";
-
-modalImg.src="images/project1.png";
-
-}
-
-}
-
-function closeModal(){
-
-modal.style.display="none";
-
-}
-
-
-
-// close when clicking outside
-
-window.onclick=function(e){
-
-if(e.target == modal){
-
-modal.style.display="none";
-
-}
-
+    if(e.target === modal)
+    {
+        closeModal();
+    }
 };
+
+
+
+// ===============================
+// PERFORMANCE OPTIMIZATION
+// ===============================
+
+// Prevent heavy scroll lag
+
+let ticking = false;
+
+window.addEventListener("scroll", function()
+{
+    if(!ticking)
+    {
+        window.requestAnimationFrame(function()
+        {
+            ticking = false;
+        });
+
+        ticking = true;
+    }
+});
+
+
+
+// ===============================
+// SAFE IMAGE LOAD HANDLER
+// ===============================
+
+window.addEventListener("load", function()
+{
+    document.body.style.opacity = "1";
+});
