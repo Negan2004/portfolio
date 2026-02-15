@@ -2,37 +2,38 @@
 <html lang="en">
 
 <head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samarth Sharma | Java Full Stack Developer</title>
 
-  <link rel="stylesheet" href="style.css">
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-
-
-  <!-- Animated Background -->
+  <!-- Animated Developer Background -->
   <div class="bg-animation"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+  <div class="code-rain" id="codeRain" aria-hidden="true"></div>
 
+  <!-- Custom Cursor (Desktop) -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
 
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-container">
 
-<div class="logo" onclick="scrollToTop()">Samarth</div>
+      <div class="logo" onclick="scrollToTop()">Samarth</div>
 
-      <div class="menu-toggle" id="menu-toggle">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
         ☰
-      </div>
+      </button>
 
       <ul class="nav-links" id="nav-links">
-
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Education</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -41,47 +42,35 @@
         <li><a href="#contact">Contact</a></li>
 
         <li>
-          <a href="MY_Resume.pdf" download class="resume-btn">
-            Download Resume
+          <a href="MY_Resume.pdf" target="_blank" rel="noopener" class="resume-btn">
+            View Resume
           </a>
         </li>
-
       </ul>
 
     </div>
   </nav>
-
-
 
   <!-- HERO -->
   <section id="home" class="hero">
 
     <div class="hero-container">
 
-      <div class="hero-image">
-
-        <img src="images/samarth.jpeg" alt="Samarth Sharma">
-
+      <div class="hero-image reveal-item">
+        <img src="images/samarth.jpeg" alt="Samarth Sharma" />
       </div>
 
+      <div class="hero-text reveal-item">
 
-      <div class="hero-text">
+        <h1>Hi, I'm Samarth Sharma</h1>
 
-        <h1>
-          Hi, I'm Samarth Sharma
-        </h1>
-
-        <h2>
-          Java Full Stack Developer
-        </h2>
+        <h2>Java Full Stack Developer</h2>
 
         <p>
           Building scalable backend systems, REST APIs, and modern web applications.
         </p>
 
-        <a href="#projects" class="btn">
-          View My Work
-        </a>
+        <a href="#projects" class="btn">View My Work</a>
 
       </div>
 
@@ -89,19 +78,12 @@
 
   </section>
 
-
-
   <!-- ABOUT -->
   <section id="about" class="section">
+    <h2 class="section-title reveal-item">About Me</h2>
 
-    <h2 class="section-title">
-      About Me
-    </h2>
-
-    <div class="about-content">
-
+    <div class="about-content reveal-item">
       <p>
-
         I am a fresher Java Full Stack Developer currently pursuing Master of Computer Applications (MCA), with strong
         foundational knowledge in backend development and database-driven web applications.
 
@@ -112,28 +94,18 @@
         I am passionate about learning modern software development practices, writing clean and maintainable code, and
         continuously improving my technical skills. I am actively seeking an entry-level opportunity where I can
         contribute, learn from experienced developers, and grow into a professional software engineer.
-
       </p>
-
     </div>
-
   </section>
-
-
 
   <!-- EDUCATION -->
   <section id="experience" class="section dark">
-
-    <h2 class="section-title">
-      Education & Experience
-    </h2>
+    <h2 class="section-title reveal-item">Education & Experience</h2>
 
     <div class="timeline">
 
-      <div class="timeline-item">
-
+      <div class="timeline-item reveal-item">
         <div class="timeline-dot"></div>
-
         <div class="timeline-content">
 
           <h3>Java Full Stack Developer Trainee</h3>
@@ -146,13 +118,10 @@
           <span>2024</span>
 
         </div>
-
       </div>
 
-      <div class="timeline-item">
-
+      <div class="timeline-item reveal-item">
         <div class="timeline-dot"></div>
-
         <div class="timeline-content">
 
           <h3>BCA</h3>
@@ -166,13 +135,10 @@
           <span>2022 - 2025</span>
 
         </div>
-
       </div>
 
-      <div class="timeline-item">
-
+      <div class="timeline-item reveal-item">
         <div class="timeline-dot"></div>
-
         <div class="timeline-content">
 
           <h3>MCA</h3>
@@ -185,28 +151,19 @@
           <span>2025 – Present</span>
 
         </div>
-
       </div>
 
     </div>
-
   </section>
-
-
 
   <!-- PROJECTS -->
   <section id="projects" class="section">
-
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title reveal-item">Projects</h2>
 
     <div class="projects-grid">
 
-
-      <!-- Project 1 -->
-      <div class="project-card">
-
-        <img src="images/project1.png" class="project-image">
-
+      <div class="project-card reveal-item">
+        <img src="images/project1.png" class="project-image" alt="Project Idea Generator" loading="lazy" />
         <div class="project-content">
 
           <h3>Project Idea Generator</h3>
@@ -216,21 +173,15 @@
             CRUD operations, and GitHub API integration to generate project ideas dynamically.
           </p>
 
-          <a href="https://github.com/Negan2004/project-idea-generator-java" target="_blank" class="project-link">
+          <a href="https://github.com/Negan2004/project-idea-generator-java" target="_blank" rel="noopener" class="project-link">
             View on GitHub →
           </a>
 
         </div>
-
       </div>
 
-
-
-      <!-- Project 2 -->
-      <div class="project-card">
-
-        <img src="images/project2.png" class="project-image">
-
+      <div class="project-card reveal-item">
+        <img src="images/project2.png" class="project-image" alt="Movie Review System" loading="lazy" />
         <div class="project-content">
 
           <h3>Movie Review System</h3>
@@ -240,203 +191,137 @@
             Includes user authentication, review submission, and admin management system.
           </p>
 
-          <span class="project-link disabled">
-            LOCAL
-          </span>
+          <span class="project-link disabled">LOCAL</span>
 
         </div>
-
       </div>
 
-      <div class="project-card">
-
-        <img src="images/project3.png" class="project-image">
-
+      <div class="project-card reveal-item">
+        <img src="images/project3.png" class="project-image" alt="Pharmacy Inventory Management System" loading="lazy" />
         <div class="project-content">
 
           <h3>Pharmacy Inventory Management System</h3>
 
           <p>
-          PHP and MySQL-based inventory management system for pharmacies, featuring product tracking, stock management, and sales reporting.
+            PHP and MySQL-based inventory management system for pharmacies, featuring product tracking, stock management, and sales reporting.
           </p>
 
-          <span class="project-link disabled">
-            LOCAL
-          </span>
+          <span class="project-link disabled">LOCAL</span>
 
         </div>
-
       </div>
 
-
     </div>
+
+    <button id="showMoreProjects" class="show-more-btn">Show More Projects</button>
   </section>
-
-
-
 
   <!-- SKILLS -->
-  <section id="skills" class="section dark">
-
-    <h2 class="section-title">
-      Skills
-    </h2>
+  <section id="skills" class="section dark skills-section">
+    <h2 class="section-title reveal-item">Skills</h2>
 
     <div class="skills-container">
-
-      <span>Java</span>
-      <span>JSP</span>
-      <span>Servlets</span>
-      <span>MySQL</span>
-      <span>REST API</span>
-      <span>PHP</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>Bootstrap</span>
-      <span>Git</span>
-
+      <span class="reveal-item">Java</span>
+      <span class="reveal-item">JSP</span>
+      <span class="reveal-item">Servlets</span>
+      <span class="reveal-item">MySQL</span>
+      <span class="reveal-item">REST API</span>
+      <span class="reveal-item">PHP</span>
+      <span class="reveal-item">HTML</span>
+      <span class="reveal-item">CSS</span>
+      <span class="reveal-item">JavaScript</span>
+      <span class="reveal-item">Bootstrap</span>
+      <span class="reveal-item">Git</span>
     </div>
-
   </section>
 
-
-  <!-- certificates -->
-  <section id="certificates">
-
-    <h2 class="section-title">Certificates</h2>
+  <!-- CERTIFICATES -->
+  <section id="certificates" class="certificates-section">
+    <h2 class="section-title reveal-item">Certificates</h2>
 
     <div class="certificates-container">
 
-      <div class="certificate-card">
-        <img src="images/Full_Stack.jpg">
+      <div class="certificate-card reveal-item">
+        <img src="images/Full_Stack.jpg" alt="Java Full Stack Certification" loading="lazy" />
         <h3>Java Full Stack Certification</h3>
         <p>Complete Full Stack Development Training</p>
       </div>
 
-      <div class="certificate-card">
-        <img src="images/RDBMS.png">
+      <div class="certificate-card reveal-item">
+        <img src="images/RDBMS.png" alt="RDBMS Training Certification" loading="lazy" />
         <h3>RDBMS Training Certification</h3>
         <p>MySQL and RDBMS Concepts</p>
       </div>
 
-      <div class="certificate-card">
-        <img src="images/c.png">
+      <div class="certificate-card reveal-item">
+        <img src="images/c.png" alt="C Training Certification" loading="lazy" />
         <h3>C Training Certification</h3>
         <p>Completed C Programming Training</p>
       </div>
+
     </div>
 
+    <button id="showMoreCertificates" class="show-more-btn">Show More Certificates</button>
   </section>
-
 
   <!-- CONTACT -->
   <section id="contact" class="section contact-section">
+    <h2 class="section-title reveal-item">Contact</h2>
 
-<h2 class="section-title">Contact</h2>
+    <div class="contact-grid">
 
-<div class="contact-grid">
+      <div class="contact-card reveal-item">
+        <div class="contact-icon">📧</div>
+        <h3>Email</h3>
+        <p>samugsharma1111@gmail.com</p>
+        <a href="mailto:samugsharma1111@gmail.com" class="contact-btn">Send Email</a>
+      </div>
 
-<!-- Email -->
-<div class="contact-card">
+      <div class="contact-card reveal-item">
+        <div class="contact-icon">💻</div>
+        <h3>GitHub</h3>
+        <p>github.com/Negan2004</p>
+        <a href="https://github.com/Negan2004" target="_blank" rel="noopener" class="contact-btn">View Profile</a>
+      </div>
 
-<div class="contact-icon">📧</div>
+      <div class="contact-card reveal-item">
+        <div class="contact-icon">in</div>
+        <h3>LinkedIn</h3>
+        <p>linkedin.com/in/samarth-sharma</p>
+        <a href="https://www.linkedin.com/in/samarth-sharma-a60aa2286/" target="_blank" rel="noopener" class="contact-btn">View Profile</a>
+      </div>
 
-<h3>Email</h3>
-
-<p>samugsharma1111@gmail.com</p>
-
-<a href="mailto:samugsharma1111@gmail.com" class="contact-btn">
-Send Email
-</a>
-
-</div>
-
-
-<!-- GitHub -->
-<div class="contact-card">
-
-<div class="contact-icon">💻</div>
-
-<h3>GitHub</h3>
-
-<p>github.com/Negan2004</p>
-
-<a href="https://github.com/Negan2004" target="_blank" class="contact-btn">
-View Profile
-</a>
-
-</div>
-
-
-<!-- LinkedIn -->
-<div class="contact-card">
-
-<div class="contact-icon">in</div>
-
-<h3>LinkedIn</h3>
-
-<p>linkedin.com/in/samarth-sharma</p>
-
-<a href="https://www.linkedin.com/in/samarth-sharma-a60aa2286/"
-   target="_blank"
-   class="contact-btn">
-View Profile
-</a>
-
-</div>
-
-
-
-
-
-</div>
-
-</section>
-
-
-
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
+    <div class="footer-top-line"></div>
 
-<div class="footer-content">
+    <div class="footer-content">
+      <h3>Samarth Sharma</h3>
+      <p>Java Full Stack Developer</p>
 
-<h3>Samarth Sharma</h3>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-<p>Java Full Stack Developer</p>
-
-<div class="footer-links">
-
-<a href="#home">Home</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
-
-</div>
-
-<p class="footer-copy">
-© 2026 Samarth Sharma. All rights reserved.
-</p>
-
-</div>
-
-</footer>
-
-
-
-  <script src="script.js"></script>
+      <p class="footer-copy">
+        © 2026 Samarth Sharma. All rights reserved.
+      </p>
+    </div>
+  </footer>
 
   <!-- Certificate Modal -->
-<div id="certModal" class="cert-modal">
+  <div id="certModal" class="cert-modal">
+    <span class="cert-close">&times;</span>
+    <img class="cert-modal-img" id="certModalImg" alt="Certificate Preview" />
+  </div>
 
-<span class="cert-close">&times;</span>
-
-<img class="cert-modal-img" id="certModalImg">
-
-</div>
-
-
+  <script src="script.js"></script>
 </body>
 
 </html>
