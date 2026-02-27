@@ -88,7 +88,7 @@ const fadeObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
 /* ─── TYPING EFFECT ────────────────────────────── */
-const typingWords = ['Java Full Stack Developer', 'Backend Engineer', 'Web Developer', 'MCA Student', 'Problem Solver'];
+const typingWords = ['Web Developer','Java Enthusiast','MCA Student', 'Problem Solver'];
 let wordIndex = 0, charIndex = 0, isDeleting = false;
 const typingEl = document.getElementById('typingText');
 
