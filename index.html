@@ -3,494 +3,617 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Samarth Sharma — Java Full Stack Developer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <title>Samarth Sharma — Learning, Building, Growing</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="preloader">
-    <div class="preloader-inner">
-      <div class="preloader-logo">Samarth</div>
-      <div class="preloader-bar"><div class="preloader-fill"></div></div>
-      <div class="preloader-text">Loading Portfolio...</div>
-    </div>
-  </div>
 
-  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-    <div class="container px-4">
-      <a class="navbar-brand" href="#hero">Samarth<span class="brand-dot">.</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="nav-hamburger"><span></span><span></span><span></span></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto align-items-center gap-1">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
-          <li class="nav-item ms-2"><a class="btn btn-primary-outline" href="#contact">Contact Me</a></li>
+  <!-- ══════════════════════════════════
+       MASTHEAD / HEADER
+  ══════════════════════════════════ -->
+  <header class="site-masthead">
+    <div class="masthead-top">
+      <div class="masthead-date" id="mastheadDate"></div>
+      <div class="masthead-tagline">A student's log of learning, building &amp; growing</div>
+    </div>
+    <div class="masthead-main">
+      <div class="masthead-inner">
+        <h1 class="masthead-name">Samarth Sharma</h1>
+        <p class="masthead-sub">Java Developer in Training &nbsp;·&nbsp; MCA Student &nbsp;·&nbsp; Mumbai, India</p>
+      </div>
+    </div>
+    <nav class="masthead-nav" id="mainNav">
+      <div class="nav-inner">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <i class="bi bi-list"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#contact" class="nav-cta">Say Hello</a></li>
         </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <section id="hero" class="hero-section">
-    <div class="container hero-content">
-      <div class="row align-items-center min-vh-100">
-        <div class="col-lg-7">
-          <div class="hero-badge reveal-up"><span class="badge-dot"></span> Open to Entry-Level Opportunities</div>
-          <h1 class="hero-title reveal-up delay-1">Hi, I'm<br/><span class="accent-text">Samarth Sharma</span></h1>
-          <h2 class="hero-subtitle reveal-up delay-2"><span id="typingText"></span><span class="cursor-blink">|</span></h2>
-          <p class="hero-desc reveal-up delay-2">Building scalable backend systems, REST APIs, and modern web applications using Java, Spring Boot, JSP, Servlets, and MySQL.</p>
-          <div class="hero-ctas reveal-up delay-3">
-            <a href="#projects" class="btn btn-dark-solid btn-lg"><i class="bi bi-grid-fill me-2"></i>View My Work</a>
-            <a href="#contact" class="btn btn-outline-dark-custom btn-lg"><i class="bi bi-arrow-right me-2"></i>Hire Me</a>
+  <main class="site-main">
+
+    <!-- ══════════════════════════════════
+         HERO / BYLINE SECTION
+    ══════════════════════════════════ -->
+    <section id="hero" class="hero-section">
+      <div class="container-blog">
+        <div class="hero-grid">
+
+          <!-- Left: Intro text -->
+          <div class="hero-intro fade-in">
+            <div class="issue-label">Issue No. 1 &nbsp;·&nbsp; Entry-Level &nbsp;·&nbsp; Open to Work</div>
+            <h2 class="hero-headline">
+              Hi — I'm Samarth.<br/>
+              <span id="typingText"></span><span class="cursor-blink">|</span>
+            </h2>
+            <p class="hero-body">
+              Building scalable backend systems, REST APIs, and modern web applications using Java, Spring Boot, JSP, Servlets, and MySQL.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn-blog btn-filled">Read My Work</a>
+              <a href="#contact" class="btn-blog btn-outline">Get in Touch</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-pill"><strong><span class="stat-num" data-target="3">0</span>+</strong> Projects</div>
+              <div class="stat-pill"><strong><span class="stat-num" data-target="3">0</span>+</strong> Certificates</div>
+              <div class="stat-pill"><strong><span class="stat-num" data-target="6">0</span>mo</strong> Training</div>
+              <div class="stat-pill"><strong><span class="stat-num" data-target="10">0</span>+</strong> Skills</div>
+            </div>
           </div>
-          <div class="hero-stats reveal-up delay-4">
-            <div class="stat-item"><span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span><span class="stat-label">Projects</span></div>
-            <div class="stat-divider"></div>
-            <div class="stat-item"><span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span><span class="stat-label">Certificates</span></div>
-            <div class="stat-divider"></div>
-            <div class="stat-item"><span class="stat-num" data-target="6">0</span><span class="stat-plus">mo</span><span class="stat-label">Experience</span></div>
-            <div class="stat-divider"></div>
-            <div class="stat-item"><span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span><span class="stat-label">Tech Skills</span></div>
+
+          <!-- Right: Photo + chips -->
+          <div class="hero-photo-wrap fade-in delay-1">
+            <div class="photo-frame">
+              <img src="images/samarth.jpeg" alt="Samarth Sharma" class="hero-photo" loading="lazy" />
+            </div>
+            <div class="photo-caption">
+              <i class="bi bi-geo-alt"></i> Mumbai, Maharashtra
+            </div>
+            <div class="status-chips">
+              <span class="chip chip-saffron"><i class="bi bi-mortarboard"></i> MCA Student</span>
+              <span class="chip chip-green"><i class="bi bi-code-slash"></i> Java Full Stack</span>
+              <span class="chip chip-indigo"><i class="bi bi-briefcase"></i> Open to Work</span>
+            </div>
           </div>
+
         </div>
-        <div class="col-lg-5 d-none d-lg-flex justify-content-center">
-          <div class="hero-visual reveal-right delay-2">
-            <div class="hero-card-stack">
-              <div class="hc hc-back"></div>
-              <div class="hc hc-mid">
-                <div class="hc-code">
-                  <span class="code-line"><span class="k">public class</span> <span class="v">Samarth</span> {</span>
-                  <span class="code-line pl">  <span class="k">String</span> role = <span class="s">"Full Stack Dev"</span>;</span>
-                  <span class="code-line pl">  <span class="k">String</span> stack = <span class="s">"Java + Spring"</span>;</span>
-                  <span class="code-line pl">  <span class="fn">build</span>(<span class="s">"great apps"</span>);</span>
-                  <span class="code-line">}</span>
+      </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-rule"><span>✦</span></div>
+
+    <!-- ══════════════════════════════════
+         ABOUT SECTION
+    ══════════════════════════════════ -->
+    <section id="about" class="blog-section">
+      <div class="container-blog">
+        <div class="two-col-layout">
+
+          <!-- Main column -->
+          <div class="col-main fade-in">
+            <div class="section-heading">
+              <span class="section-kicker">About Me</span>
+              <h2 class="section-title">Fresher Java Full Stack Developer</h2>
+              <div class="heading-rule"></div>
+            </div>
+
+            <div class="prose-block">
+              <p>I am a fresher Java Full Stack Developer currently pursuing Master of Computer Applications (MCA), with strong foundational knowledge in backend development and database-driven web applications.</p>
+              <p>I have built real-world academic and personal projects using Java, JSP, Servlets, MySQL, PHP, HTML, CSS, and Bootstrap, where I implemented features such as authentication systems, CRUD operations, and REST API integration. I am passionate about learning modern software development practices, writing clean and maintainable code, and continuously improving my technical skills.</p>
+              <p>I am actively seeking an entry-level opportunity where I can contribute, learn from experienced developers, and grow into a professional software engineer.</p>
+            </div>
+
+            <ul class="checklist">
+              <li><i class="bi bi-check2"></i> Strong backend development with Java &amp; Spring Boot</li>
+              <li><i class="bi bi-check2"></i> CRUD operations, REST API integration &amp; authentication</li>
+              <li><i class="bi bi-check2"></i> Database-driven web apps with MySQL</li>
+              <li><i class="bi bi-check2"></i> Clean, maintainable code &amp; continuous learner</li>
+            </ul>
+          </div>
+
+          <!-- Side column -->
+          <aside class="col-side fade-in delay-1">
+            <div class="sidebar-card">
+              <div class="sidebar-label">At a Glance</div>
+              <ul class="sidebar-list">
+                <li><span>Experience</span> 6 months trainee</li>
+                <li><span>Projects</span> 3 built</li>
+                <li><span>Certifications</span> 3 earned</li>
+                <li><span>Degree</span> BCA + MCA (ongoing)</li>
+                <li><span>Location</span> Mumbai, India</li>
+                <li><span>Status</span> Open to opportunities</li>
+              </ul>
+            </div>
+            <div class="sidebar-card sidebar-resume mt-3">
+              <div class="sidebar-label">My Resume</div>
+              <a href="MY_Resume.pdf" target="_blank" rel="noopener" class="btn-blog btn-filled btn-sm w-100 mt-2" data-resume-link="view">
+                <i class="bi bi-file-earmark-text me-1"></i> View Resume
+              </a>
+              <a href="MY_Resume.pdf" class="btn-blog btn-outline btn-sm w-100 mt-2" data-resume-link="download">
+                <i class="bi bi-download me-1"></i> Download Resume
+              </a>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="section-rule"><span>✦</span></div>
+
+    <!-- ══════════════════════════════════
+         EDUCATION & EXPERIENCE
+    ══════════════════════════════════ -->
+    <section id="education" class="blog-section bg-tinted">
+      <div class="container-blog">
+        <div class="section-heading centered fade-in">
+          <span class="section-kicker">Background</span>
+          <h2 class="section-title">Education &amp; Experience</h2>
+          <p class="section-sub">My academic journey and hands-on professional training.</p>
+          <div class="heading-rule centered-rule"></div>
+        </div>
+        <div class="timeline fade-in">
+
+          <div class="timeline-item">
+            <div class="timeline-dot dot-saffron"></div>
+            <div class="timeline-content">
+              <div class="tl-meta">
+                <span class="tl-badge badge-saffron">Experience</span>
+                <span class="tl-year">2024</span>
+              </div>
+              <h3 class="tl-title">Java Full Stack Developer Trainee</h3>
+              <p class="tl-body">Worked on full stack web applications for six months using Java, JSP, Servlets, MySQL. Built CRUD systems, admin dashboards, and REST API integrations.</p>
+              <div class="tag-row">
+                <span class="tag">Java</span><span class="tag">JSP</span><span class="tag">Servlets</span><span class="tag">MySQL</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot dot-green"></div>
+            <div class="timeline-content">
+              <div class="tl-meta">
+                <span class="tl-badge badge-green">Postgraduate</span>
+                <span class="tl-year">2025 – Present</span>
+              </div>
+              <h3 class="tl-title">MCA — Master of Computer Applications</h3>
+              <p class="tl-body">Currently pursuing MCA with a focus on backend systems, database design, and enterprise application development. Deepening expertise in modern software architecture.</p>
+              <div class="tag-row">
+                <span class="tag">Backend</span><span class="tag">Enterprise</span><span class="tag">Architecture</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot dot-indigo"></div>
+            <div class="timeline-content">
+              <div class="tl-meta">
+                <span class="tl-badge badge-indigo">Undergraduate</span>
+                <span class="tl-year">2022 – 2025</span>
+              </div>
+              <h3 class="tl-title">BCA — Bachelor of Computer Applications</h3>
+              <p class="tl-body">Graduate with a focus on software development, database management, and web technologies. Completed coursework in Java programming, data structures, and software engineering principles.</p>
+              <div class="tag-row">
+                <span class="tag">Java</span><span class="tag">Databases</span><span class="tag">Web Tech</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="section-rule"><span>✦</span></div>
+
+    <!-- ══════════════════════════════════
+         PROJECTS
+    ══════════════════════════════════ -->
+    <section id="projects" class="blog-section">
+      <div class="container-blog">
+        <div class="section-heading centered fade-in">
+          <span class="section-kicker">My Work</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-sub">Real-world projects built with modern Java full stack technologies.</p>
+          <div class="heading-rule centered-rule"></div>
+        </div>
+
+        <!-- Filter bar -->
+        <div class="filter-bar fade-in" id="projectFilters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="java">Java</button>
+          <button class="filter-btn" data-filter="php">PHP</button>
+        </div>
+
+        <!-- Projects as blog entries -->
+        <div class="projects-list" id="projectGrid">
+
+          <!-- Project 1 -->
+          <article class="project-entry fade-in project-item" data-category="java">
+            <div class="project-thumb">
+              <img src="images/project1.png" alt="Project Idea Generator Screenshot" loading="lazy" />
+              <div class="project-thumb-overlay">
+                <a href="https://project-idea-generator-java.onrender.com/" target="_blank" rel="noopener" class="thumb-link"><i class="bi bi-box-arrow-up-right"></i> View Live</a>
+                <a href="https://github.com/Negan2004/project-idea-generator-java" target="_blank" rel="noopener" class="thumb-link"><i class="bi bi-github"></i> GitHub</a>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="tag tag-java">Java</span>
+                <span class="tag tag-ai">AI</span>
+                <span class="project-stack"><i class="bi bi-stack"></i> Java + Spring Boot</span>
+              </div>
+              <h3 class="project-title">Project Idea Generator</h3>
+              <p class="project-desc">Java Full Stack web application with Admin authentication, CRUD operations, and GitHub API integration to generate project ideas dynamically based on user interests and domain.</p>
+              <div class="project-links">
+                <a href="https://project-idea-generator-java.onrender.com/" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> View Project</a>
+                <a href="https://github.com/Negan2004/project-idea-generator-java" target="_blank" rel="noopener"><i class="bi bi-github"></i> View GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-entry fade-in delay-1 project-item" data-category="php">
+            <div class="project-thumb">
+              <img src="images/project2.png" alt="Movie Review System Screenshot" loading="lazy" />
+              <div class="project-thumb-overlay"></div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="tag tag-php">PHP</span>
+                <span class="project-stack"><i class="bi bi-stack"></i> PHP + MySQL</span>
+                <span class="project-host"><i class="bi bi-hdd-fill"></i> LOCAL</span>
+              </div>
+              <h3 class="project-title">Movie Review System</h3>
+              <p class="project-desc">Web-based movie review platform built using PHP and MySQL. Includes user authentication, review submission, star ratings, and a full admin management system for content moderation.</p>
+              <div class="project-links muted">
+                <span><i class="bi bi-hdd-fill"></i> Runs locally</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-entry fade-in delay-2 project-item" data-category="php">
+            <div class="project-thumb">
+              <img src="images/project3.png" alt="Pharmacy Inventory Management System Screenshot" loading="lazy" />
+              <div class="project-thumb-overlay"></div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="tag tag-php">PHP</span>
+                <span class="project-stack"><i class="bi bi-stack"></i> PHP + MySQL</span>
+                <span class="project-host"><i class="bi bi-hdd-fill"></i> LOCAL</span>
+              </div>
+              <h3 class="project-title">Pharmacy Inventory Management System</h3>
+              <p class="project-desc">PHP and MySQL-based inventory management system for pharmacies, featuring product tracking, stock management, expiry alerts, and comprehensive sales reporting with charts.</p>
+              <div class="project-links muted">
+                <span><i class="bi bi-hdd-fill"></i> Runs locally</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="section-rule"><span>✦</span></div>
+
+    <!-- ══════════════════════════════════
+         SKILLS
+    ══════════════════════════════════ -->
+    <section id="skills" class="blog-section bg-tinted">
+      <div class="container-blog">
+        <div class="two-col-layout">
+
+          <div class="col-main fade-in">
+            <div class="section-heading">
+              <span class="section-kicker">Technical Stack</span>
+              <h2 class="section-title">Skills &amp; Technologies</h2>
+              <p class="section-sub">My core technical skills across backend, frontend, and database technologies.</p>
+              <div class="heading-rule"></div>
+            </div>
+
+            <div class="skills-group">
+              <div class="skills-category">
+                <h4 class="skills-cat-label">Backend</h4>
+                <div class="skills-tags">
+                  <span class="skill-tag"><i class="bi bi-cup-hot-fill"></i> Java</span>
+                  <span class="skill-tag"><i class="bi bi-server"></i> Servlets</span>
+                  <span class="skill-tag"><i class="bi bi-filetype-html"></i> JSP</span>
+                  <span class="skill-tag"><i class="bi bi-lightning-fill"></i> Spring Boot</span>
+                  <span class="skill-tag"><i class="bi bi-diagram-3-fill"></i> Hibernate</span>
+                  <span class="skill-tag"><i class="bi bi-filetype-php"></i> PHP</span>
+                  <span class="skill-tag"><i class="bi bi-gear-wide-connected"></i> REST API</span>
+                  <span class="skill-tag"><i class="bi bi-layout-three-columns"></i> MVC</span>
                 </div>
               </div>
-              <div class="hc hc-front">
-                <div class="hc-icon-grid">
-                  <div class="hc-icon active"><i class="bi bi-cup-hot-fill"></i></div>
-                  <div class="hc-icon"><i class="bi bi-database-fill"></i></div>
-                  <div class="hc-icon"><i class="bi bi-globe2"></i></div>
-                  <div class="hc-icon"><i class="bi bi-gear-fill"></i></div>
-                  <div class="hc-icon"><i class="bi bi-server"></i></div>
-                  <div class="hc-icon"><i class="bi bi-filetype-html"></i></div>
+              <div class="skills-category">
+                <h4 class="skills-cat-label">Frontend</h4>
+                <div class="skills-tags">
+                  <span class="skill-tag"><i class="bi bi-filetype-html"></i> HTML</span>
+                  <span class="skill-tag"><i class="bi bi-filetype-css"></i> CSS</span>
+                  <span class="skill-tag"><i class="bi bi-filetype-js"></i> JavaScript</span>
+                  <span class="skill-tag"><i class="bi bi-bootstrap-fill"></i> Bootstrap</span>
                 </div>
-                <div class="hc-label">JAVA FULL STACK DEVELOPER</div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-      <span>Scroll Down</span>
-    </div>
-  </section>
-
-  <section id="about" class="section-base">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-5">
-          <div class="about-visual reveal-left">
-            <div class="about-img-wrap">
-              <div class="about-profile-container">
-                <img src="images/samarth.jpeg" alt="Samarth Sharma Profile" class="about-profile-img" loading="lazy" decoding="async" />
-              </div>
-              <div class="chip chip-1"><i class="bi bi-mortarboard-fill"></i> MCA Student</div>
-              <div class="chip chip-2"><i class="bi bi-code-slash"></i> Java Full Stack</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <div class="reveal-up">
-            <div class="section-tag">About Me</div>
-            <h2 class="section-title">Fresher Java<br/><span class="accent-text">Full Stack Developer</span></h2>
-            <p class="section-body">I am a fresher Java Full Stack Developer currently pursuing Master of Computer Applications (MCA), with strong foundational knowledge in backend development and database-driven web applications.</p>
-            <p class="section-body mt-3">I have built real-world academic and personal projects using Java, JSP, Servlets, MySQL, PHP, HTML, CSS, and Bootstrap, where I implemented features such as authentication systems, CRUD operations, and REST API integration. I am passionate about learning modern software development practices, writing clean and maintainable code, and continuously improving my technical skills.</p>
-            <p class="section-body mt-3">I am actively seeking an entry-level opportunity where I can contribute, learn from experienced developers, and grow into a professional software engineer.</p>
-            <div class="about-features mt-4">
-              <div class="af-item"><i class="bi bi-check2-circle"></i> Strong backend development with Java &amp; Spring Boot</div>
-              <div class="af-item"><i class="bi bi-check2-circle"></i> CRUD operations, REST API integration &amp; authentication</div>
-              <div class="af-item"><i class="bi bi-check2-circle"></i> Database-driven web apps with MySQL</div>
-              <div class="af-item"><i class="bi bi-check2-circle"></i> Clean, maintainable code &amp; continuous learner</div>
-            </div>
-            <div class="about-counters mt-5">
-              <div class="ac-item"><span class="ac-num counter" data-target="6">0</span><span class="ac-plus">mo</span><span class="ac-label">Trainee Experience</span></div>
-              <div class="ac-item"><span class="ac-num counter" data-target="3">0</span><span class="ac-plus">+</span><span class="ac-label">Projects Built</span></div>
-              <div class="ac-item"><span class="ac-num counter" data-target="3">0</span><span class="ac-plus">+</span><span class="ac-label">Certifications</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="education" class="section-base section-alt">
-    <div class="container">
-      <div class="section-header text-center reveal-up">
-        <div class="section-tag">Background</div>
-        <h2 class="section-title">Education &amp; <span class="accent-text">Experience</span></h2>
-        <p class="section-subtitle">My academic journey and hands-on professional training.</p>
-      </div>
-      <div class="row g-4 mt-2">
-        <div class="col-lg-4 col-md-6">
-          <div class="service-card reveal-up delay-1">
-            <div class="sc-icon"><i class="bi bi-briefcase-fill"></i></div>
-            <div class="sc-num">Experience</div>
-            <h3 class="sc-title">Java Full Stack Developer Trainee</h3>
-            <p class="sc-body">Worked on full stack web applications for six months using Java, JSP, Servlets, MySQL. Built CRUD systems, admin dashboards, and REST API integrations.</p>
-            <div class="sc-tags"><span>Java</span><span>JSP</span><span>Servlets</span><span>MySQL</span></div>
-            <div class="sc-link"><i class="bi bi-calendar3 me-1"></i> 2024</div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="service-card reveal-up delay-2">
-            <div class="sc-icon"><i class="bi bi-mortarboard-fill"></i></div>
-            <div class="sc-num">Undergraduate</div>
-            <h3 class="sc-title">BCA — Bachelor of Computer Applications</h3>
-            <p class="sc-body">Graduate with a focus on software development, database management, and web technologies. Completed coursework in Java programming, data structures, and software engineering principles.</p>
-            <div class="sc-tags"><span>Java</span><span>Databases</span><span>Web Tech</span></div>
-            <div class="sc-link"><i class="bi bi-calendar3 me-1"></i> 2022 – 2025</div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="service-card reveal-up delay-3">
-            <div class="sc-icon"><i class="bi bi-book-fill"></i></div>
-            <div class="sc-num">Postgraduate</div>
-            <h3 class="sc-title">MCA — Master of Computer Applications</h3>
-            <p class="sc-body">Currently pursuing MCA with a focus on backend systems, database design, and enterprise application development. Deepening expertise in modern software architecture.</p>
-            <div class="sc-tags"><span>Backend</span><span>Enterprise</span><span>Architecture</span></div>
-            <div class="sc-link"><i class="bi bi-calendar3 me-1"></i> 2025 – Present</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="section-base">
-    <div class="container">
-      <div class="section-header text-center reveal-up">
-        <div class="section-tag">My Work</div>
-        <h2 class="section-title">Featured <span class="accent-text">Projects</span></h2>
-        <p class="section-subtitle">Real-world projects built with modern Java full stack technologies.</p>
-      </div>
-      <div class="project-filters reveal-up mt-4 mb-5" id="projectFilters">
-        <button class="pf-btn active" data-filter="all">All</button>
-        <button class="pf-btn" data-filter="java">Java</button>
-        <button class="pf-btn" data-filter="php">PHP</button>
-      </div>
-      <div class="row g-4" id="projectGrid">
-        <div class="col-md-6 col-lg-4 project-item" data-category="java">
-          <div class="project-card reveal-up delay-1">
-            <div class="pc-img">
-              <img src="images/project1.png" alt="Project Idea Generator Screenshot" class="pc-cover" loading="lazy" decoding="async" />
-              <div class="pc-overlay">
-                <div class="pc-overlay-actions">
-                  <a href="https://project-idea-generator-java.onrender.com/" target="_blank" rel="noopener" class="pc-overlay-btn">View Project <i class="bi bi-box-arrow-up-right"></i></a>
-                  <a href="https://github.com/Negan2004/project-idea-generator-java" target="_blank" rel="noopener" class="pc-overlay-btn pc-overlay-btn-secondary">View GitHub <i class="bi bi-github"></i></a>
+              <div class="skills-category">
+                <h4 class="skills-cat-label">Database &amp; Tools</h4>
+                <div class="skills-tags">
+                  <span class="skill-tag"><i class="bi bi-database-fill"></i> MySQL</span>
+                  <span class="skill-tag"><i class="bi bi-git"></i> Git</span>
+                  <span class="skill-tag"><i class="bi bi-shield-lock-fill"></i> Auth</span>
+                  <span class="skill-tag"><i class="bi bi-arrow-repeat"></i> CRUD</span>
                 </div>
               </div>
             </div>
-            <div class="pc-body">
-              <div class="pc-tags"><span class="tag java">Java</span><span class="tag ai">AI</span></div>
-              <h4 class="pc-title">Project Idea Generator</h4>
-              <p class="pc-desc">Java Full Stack web application with Admin authentication, CRUD operations, and GitHub API integration to generate project ideas dynamically based on user interests and domain.</p>
-              <div class="pc-meta"><span><i class="bi bi-github"></i> GitHub</span><span><i class="bi bi-stack"></i> Java + Spring Boot</span></div>
-            </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-4 project-item" data-category="php">
-          <div class="project-card reveal-up delay-2">
-            <div class="pc-img">
-              <img src="images/project2.png" alt="Movie Review System Screenshot" class="pc-cover" loading="lazy" decoding="async" />
-              <div class="pc-overlay"><div class="pc-overlay-actions"></div></div>
-            </div>
-            <div class="pc-body">
-              <div class="pc-tags"><span class="tag php">PHP</span></div>
-              <h4 class="pc-title">Movie Review System</h4>
-              <p class="pc-desc">Web-based movie review platform built using PHP and MySQL. Includes user authentication, review submission, star ratings, and a full admin management system for content moderation.</p>
-              <div class="pc-meta"><span><i class="bi bi-hdd-fill"></i> LOCAL</span><span><i class="bi bi-stack"></i> PHP + MySQL</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 project-item" data-category="php">
-          <div class="project-card reveal-up delay-3">
-            <div class="pc-img">
-              <img src="images/project3.png" alt="Pharmacy Inventory Management System Screenshot" class="pc-cover" loading="lazy" decoding="async" />
-              <div class="pc-overlay"><div class="pc-overlay-actions"></div></div>
-            </div>
-            <div class="pc-body">
-              <div class="pc-tags"><span class="tag php">PHP</span></div>
-              <h4 class="pc-title">Pharmacy Inventory Management System</h4>
-              <p class="pc-desc">PHP and MySQL-based inventory management system for pharmacies, featuring product tracking, stock management, expiry alerts, and comprehensive sales reporting with charts.</p>
-              <div class="pc-meta"><span><i class="bi bi-hdd-fill"></i> LOCAL</span><span><i class="bi bi-stack"></i> PHP + MySQL</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="skills" class="section-base section-alt">
-    <div class="container">
-      <div class="section-header text-center reveal-up">
-        <div class="section-tag">Technical Stack</div>
-        <h2 class="section-title">Skills &amp; <span class="accent-text">Technologies</span></h2>
-        <p class="section-subtitle">My core technical skills across backend, frontend, and database technologies.</p>
-      </div>
-      <div class="tech-grid reveal-up mt-5">
-        <div class="tech-item"><i class="bi bi-cup-hot-fill"></i><span>Java</span></div>
-        <div class="tech-item"><i class="bi bi-filetype-html"></i><span>JSP</span></div>
-        <div class="tech-item"><i class="bi bi-server"></i><span>Servlets</span></div>
-        <div class="tech-item"><i class="bi bi-database-fill"></i><span>MySQL</span></div>
-        <div class="tech-item"><i class="bi bi-gear-wide-connected"></i><span>REST API</span></div>
-        <div class="tech-item"><i class="bi bi-filetype-php"></i><span>PHP</span></div>
-        <div class="tech-item"><i class="bi bi-filetype-html"></i><span>HTML</span></div>
-        <div class="tech-item"><i class="bi bi-filetype-css"></i><span>CSS</span></div>
-        <div class="tech-item"><i class="bi bi-filetype-js"></i><span>JavaScript</span></div>
-        <div class="tech-item"><i class="bi bi-bootstrap-fill"></i><span>Bootstrap</span></div>
-        <div class="tech-item"><i class="bi bi-git"></i><span>Git</span></div>
-        <div class="tech-item"><i class="bi bi-layout-three-columns"></i><span>MVC</span></div>
-        <div class="tech-item"><i class="bi bi-shield-lock-fill"></i><span>Auth</span></div>
-        <div class="tech-item"><i class="bi bi-arrow-repeat"></i><span>CRUD</span></div>
-        <div class="tech-item"><i class="bi bi-diagram-3-fill"></i><span>Hibernate</span></div>
-        <div class="tech-item"><i class="bi bi-lightning-fill"></i><span>Spring Boot</span></div>
-      </div>
-      <div class="row g-4 mt-5">
-        <div class="col-12 text-center reveal-up mb-2">
-          <div class="section-tag">Why Hire Me</div>
-          <h2 class="section-title">What I Bring to <span class="accent-text">Your Team</span></h2>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="why-card reveal-up delay-1">
-            <div class="wc-icon-wrap"><i class="bi bi-code-square"></i></div>
-            <h4>Clean Code</h4>
-            <p>I write readable, well-structured, and maintainable code following best practices and design patterns.</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="why-card reveal-up delay-2">
-            <div class="wc-icon-wrap"><i class="bi bi-rocket-takeoff-fill"></i></div>
-            <h4>Fast Learner</h4>
-            <p>Passionate about continuously improving skills. I quickly adapt to new technologies and frameworks.</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="why-card reveal-up delay-3">
-            <div class="wc-icon-wrap"><i class="bi bi-puzzle-fill"></i></div>
-            <h4>Problem Solver</h4>
-            <p>Enjoy breaking down complex problems and building efficient, scalable solutions from scratch.</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="why-card reveal-up delay-4">
-            <div class="wc-icon-wrap"><i class="bi bi-people-fill"></i></div>
-            <h4>Team Player</h4>
-            <p>Collaborative mindset, eager to contribute, learn from seniors, and grow within a professional team.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          <!-- Why Hire Me as sidebar -->
+          <aside class="col-side fade-in delay-1">
+            <div class="section-heading">
+              <span class="section-kicker">Why Hire Me</span>
+              <h2 class="section-title" style="font-size:1.4rem;">What I Bring to Your Team</h2>
+              <div class="heading-rule"></div>
+            </div>
+            <div class="why-list">
+              <div class="why-item">
+                <i class="bi bi-code-square why-icon"></i>
+                <div>
+                  <strong>Clean Code</strong>
+                  <p>I write readable, well-structured, and maintainable code following best practices and design patterns.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <i class="bi bi-rocket-takeoff-fill why-icon"></i>
+                <div>
+                  <strong>Fast Learner</strong>
+                  <p>Passionate about continuously improving skills. I quickly adapt to new technologies and frameworks.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <i class="bi bi-puzzle-fill why-icon"></i>
+                <div>
+                  <strong>Problem Solver</strong>
+                  <p>Enjoy breaking down complex problems and building efficient, scalable solutions from scratch.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <i class="bi bi-people-fill why-icon"></i>
+                <div>
+                  <strong>Team Player</strong>
+                  <p>Collaborative mindset, eager to contribute, learn from seniors, and grow within a professional team.</p>
+                </div>
+              </div>
+            </div>
+          </aside>
 
-  <section id="certificates" class="section-base">
-    <div class="container">
-      <div class="section-header text-center reveal-up">
-        <div class="section-tag">Credentials</div>
-        <h2 class="section-title">My <span class="accent-text">Certificates</span></h2>
-        <p class="section-subtitle">Professional certifications validating my technical expertise.</p>
-      </div>
-      <div class="row g-4 mt-3 justify-content-center">
-        <div class="col-md-6 col-lg-4">
-          <div class="certificate-card reveal-up delay-1">
-            <div class="cert-img-wrap">
-              <img src="images/Full_Stack.jpg" alt="Java Full Stack Certification" class="cert-img" loading="lazy" decoding="async" />
-            </div>
-            <div class="certificate-body">
-              <div class="pc-tags"><span class="tag java">Full Stack</span></div>
-              <h4 class="pc-title">Java Full Stack Certification</h4>
-              <p class="certificate-org">Issued By: iStepUp Training &amp; Placement Center</p>
-              <p class="pc-desc">Complete Full Stack Development Training covering HTML, CSS, Bootstrap, JavaScript, PHP, Advanced Java, Spring Boot, and MySQL — conducted by iStepUp Training &amp; Placement Center.</p>
-              <div class="pc-meta"><span><i class="bi bi-calendar3"></i> Aug 2024 – Nov 2024</span></div>
-              <a href="images/Full_Stack.jpg" target="_blank" rel="noopener" class="btn btn-outline-custom cert-btn"><i class="bi bi-arrows-fullscreen me-2"></i>View Full Certificate</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="certificate-card reveal-up delay-2">
-            <div class="cert-img-wrap">
-              <img src="images/RDBMS.png" alt="RDBMS PostgreSQL Training Certification" class="cert-img" loading="lazy" decoding="async" />
-            </div>
-            <div class="certificate-body">
-              <div class="pc-tags"><span class="tag cloud">RDBMS</span></div>
-              <h4 class="pc-title">RDBMS PostgreSQL Training Certification</h4>
-              <p class="certificate-org">Issued By: Spoken Tutorial Project, IIT Bombay</p>
-              <p class="pc-desc">Successful completion of RDBMS PostgreSQL test via Spoken Tutorial Project, IIT Bombay. Conducted at Shivnagar Vidya Prasarak Mandal's College. Credits: 1 | Score: 52.50%</p>
-              <div class="pc-meta"><span><i class="bi bi-calendar3"></i> September 30th, 2023</span></div>
-              <a href="images/RDBMS.png" target="_blank" rel="noopener" class="btn btn-outline-custom cert-btn"><i class="bi bi-arrows-fullscreen me-2"></i>View Full Certificate</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="certificate-card reveal-up delay-3">
-            <div class="cert-img-wrap">
-              <img src="images/c.png" alt="C Training Certification" class="cert-img" loading="lazy" decoding="async" />
-            </div>
-            <div class="certificate-body">
-              <div class="pc-tags"><span class="tag ai">C Lang</span></div>
-              <h4 class="pc-title">C Training Certification</h4>
-              <p class="certificate-org">Issued By: Spoken Tutorial Project, IIT Bombay</p>
-              <p class="pc-desc">Successful completion of C programming test via Spoken Tutorial Project, IIT Bombay. Conducted at Shivnagar Vidya Prasarak Mandal's College. Credits: 2 | Score: 72.50%</p>
-              <div class="pc-meta"><span><i class="bi bi-calendar3"></i> July 27th, 2023</span></div>
-              <a href="images/c.png" target="_blank" rel="noopener" class="btn btn-outline-custom cert-btn"><i class="bi bi-arrows-fullscreen me-2"></i>View Full Certificate</a>
-            </div>
-          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="section-base section-alt">
-    <div class="container">
-      <div class="row g-5 align-items-start">
-        <div class="col-lg-5 reveal-left">
-          <div class="section-tag">Get In Touch</div>
-          <h2 class="section-title">Let's Work<br/><span class="accent-text">Together</span></h2>
-          <p class="section-body mt-3">I'm actively looking for entry-level Java Full Stack Developer roles. Let's connect — I'd love to contribute to your team and grow as a developer.</p>
-          <div class="contact-info mt-4">
-            <div class="ci-item">
-              <div class="ci-icon"><i class="bi bi-envelope-fill"></i></div>
-              <div><div class="ci-label">Email</div><div class="ci-value">samugsharma1111@gmail.com</div></div>
-            </div>
-            <div class="ci-item">
-              <div class="ci-icon"><i class="bi bi-geo-alt-fill"></i></div>
-              <div><div class="ci-label">Location</div><div class="ci-value">Mumbai, Maharashtra, India</div></div>
-            </div>
-            <div class="ci-item">
-              <div class="ci-icon"><i class="bi bi-mortarboard-fill"></i></div>
-              <div><div class="ci-label">Currently</div><div class="ci-value">Pursuing MCA — Available for Opportunities</div></div>
-            </div>
-          </div>
-          <div class="contact-socials mt-4">
-            <a href="#" class="cs-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="#" class="cs-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
-            <a href="#" class="cs-link" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
-          </div>
-          <div class="resume-actions contact-resume-actions">
-            <a href="MY_Resume.pdf" class="btn btn-outline-custom" data-resume-link="view"><i class="bi bi-file-earmark-text me-2"></i>View Resume</a>
-            <a href="MY_Resume.pdf" class="btn btn-dark-solid" data-resume-link="download"><i class="bi bi-download me-2"></i>Download Resume</a>
-          </div>
+    <div class="section-rule"><span>✦</span></div>
+
+    <!-- ══════════════════════════════════
+         CERTIFICATES
+    ══════════════════════════════════ -->
+    <section id="certificates" class="blog-section">
+      <div class="container-blog">
+        <div class="section-heading centered fade-in">
+          <span class="section-kicker">Credentials</span>
+          <h2 class="section-title">My Certificates</h2>
+          <p class="section-sub">Professional certifications validating my technical expertise.</p>
+          <div class="heading-rule centered-rule"></div>
         </div>
-        <div class="col-lg-7 reveal-right">
-          <form class="contact-form" id="contactForm" novalidate>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="form-float">
-                  <input type="text" id="name" name="name" class="cf-input" placeholder=" " required />
+        <div class="certs-grid fade-in">
+
+          <div class="cert-card">
+            <div class="cert-img-wrap">
+              <img src="images/Full_Stack.jpg" alt="Java Full Stack Certification" loading="lazy" />
+            </div>
+            <div class="cert-body">
+              <span class="tag tag-java">Full Stack</span>
+              <h4 class="cert-title">Java Full Stack Certification</h4>
+              <p class="cert-issuer"><i class="bi bi-building"></i> iStepUp Training &amp; Placement Center</p>
+              <p class="cert-desc">Complete Full Stack Development Training covering HTML, CSS, Bootstrap, JavaScript, PHP, Advanced Java, Spring Boot, and MySQL — conducted by iStepUp Training &amp; Placement Center.</p>
+              <div class="cert-foot">
+                <span class="cert-date"><i class="bi bi-calendar3"></i> Aug 2024 – Nov 2024</span>
+                <a href="images/Full_Stack.jpg" target="_blank" rel="noopener" class="cert-view"><i class="bi bi-arrows-fullscreen"></i> View</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-img-wrap">
+              <img src="images/RDBMS.png" alt="RDBMS PostgreSQL Training Certification" loading="lazy" />
+            </div>
+            <div class="cert-body">
+              <span class="tag tag-rdbms">RDBMS</span>
+              <h4 class="cert-title">RDBMS PostgreSQL Training Certification</h4>
+              <p class="cert-issuer"><i class="bi bi-building"></i> Spoken Tutorial Project, IIT Bombay</p>
+              <p class="cert-desc">Successful completion of RDBMS PostgreSQL test via Spoken Tutorial Project, IIT Bombay. Conducted at Shivnagar Vidya Prasarak Mandal's College. Credits: 1 | Score: 52.50%</p>
+              <div class="cert-foot">
+                <span class="cert-date"><i class="bi bi-calendar3"></i> September 30th, 2023</span>
+                <a href="images/RDBMS.png" target="_blank" rel="noopener" class="cert-view"><i class="bi bi-arrows-fullscreen"></i> View</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-img-wrap">
+              <img src="images/c.png" alt="C Training Certification" loading="lazy" />
+            </div>
+            <div class="cert-body">
+              <span class="tag tag-c">C Lang</span>
+              <h4 class="cert-title">C Training Certification</h4>
+              <p class="cert-issuer"><i class="bi bi-building"></i> Spoken Tutorial Project, IIT Bombay</p>
+              <p class="cert-desc">Successful completion of C programming test via Spoken Tutorial Project, IIT Bombay. Conducted at Shivnagar Vidya Prasarak Mandal's College. Credits: 2 | Score: 72.50%</p>
+              <div class="cert-foot">
+                <span class="cert-date"><i class="bi bi-calendar3"></i> July 27th, 2023</span>
+                <a href="images/c.png" target="_blank" rel="noopener" class="cert-view"><i class="bi bi-arrows-fullscreen"></i> View</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="section-rule"><span>✦</span></div>
+
+    <!-- ══════════════════════════════════
+         CONTACT
+    ══════════════════════════════════ -->
+    <section id="contact" class="blog-section bg-tinted">
+      <div class="container-blog">
+        <div class="two-col-layout">
+
+          <div class="col-main fade-in">
+            <div class="section-heading">
+              <span class="section-kicker">Get In Touch</span>
+              <h2 class="section-title">Let's Work Together</h2>
+              <p class="section-sub">I'm actively looking for entry-level Java Full Stack Developer roles. Let's connect — I'd love to contribute to your team and grow as a developer.</p>
+              <div class="heading-rule"></div>
+            </div>
+
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
                   <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" class="cf-input" placeholder="Your name" required />
                   <span class="cf-err" id="nameErr">Please enter your name.</span>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-float">
-                  <input type="email" id="email" name="email" class="cf-input" placeholder=" " required />
+                <div class="form-group">
                   <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" class="cf-input" placeholder="your@email.com" required />
                   <span class="cf-err" id="emailErr">Please enter a valid email.</span>
                 </div>
               </div>
-              <div class="col-12">
-                <div class="form-float">
-                  <input type="text" id="subject" name="subject" class="cf-input" placeholder=" " required />
-                  <label for="subject">Subject *</label>
-                  <span class="cf-err" id="subjectErr">Please enter a subject.</span>
-                </div>
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <input type="text" id="subject" name="subject" class="cf-input" placeholder="What's this about?" required />
+                <span class="cf-err" id="subjectErr">Please enter a subject.</span>
               </div>
-              <div class="col-12">
-                <div class="form-float">
-                  <textarea id="message" name="message" class="cf-input cf-textarea" placeholder=" " required rows="4"></textarea>
-                  <label for="message">Your Message *</label>
-                  <span class="cf-err" id="messageErr">Please write your message.</span>
-                </div>
+              <div class="form-group">
+                <label for="message">Your Message *</label>
+                <textarea id="message" name="message" class="cf-input cf-textarea" placeholder="Write your message here..." required rows="5"></textarea>
+                <span class="cf-err" id="messageErr">Please write your message.</span>
               </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-dark-solid btn-lg w-100" id="submitBtn">
-                  <span class="btn-text"><i class="bi bi-send-fill me-2"></i>Send Message</span>
-                  <span class="btn-loader d-none"><i class="bi bi-hourglass-split me-2"></i>Sending...</span>
-                </button>
+              <button type="submit" class="btn-blog btn-filled btn-submit" id="submitBtn">
+                <span class="btn-text"><i class="bi bi-send me-2"></i>Send Message</span>
+                <span class="btn-loader d-none"><i class="bi bi-hourglass-split me-2"></i>Sending...</span>
+              </button>
+              <div class="form-feedback form-error d-none" id="formError"></div>
+              <div class="form-success d-none" id="formSuccess">
+                <i class="bi bi-check-circle-fill"></i>
+                <h4>Message Received!</h4>
+                <p>Thanks for reaching out. I'll get back to you soon!</p>
               </div>
-            </div>
-            <div class="form-feedback form-error d-none" id="formError"></div>
-            <div class="form-success d-none" id="formSuccess">
-              <i class="bi bi-check-circle-fill"></i>
-              <h4>Message Received!</h4>
-              <p>Thanks for reaching out. I'll get back to you soon!</p>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+            </form>
+          </div>
 
+          <aside class="col-side fade-in delay-1">
+            <div class="sidebar-card">
+              <div class="sidebar-label">Contact Info</div>
+              <ul class="contact-info-list">
+                <li>
+                  <i class="bi bi-envelope-fill ci-icon"></i>
+                  <div>
+                    <span class="ci-label">Email</span>
+                    <span class="ci-value">samugsharma1111@gmail.com</span>
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-geo-alt-fill ci-icon"></i>
+                  <div>
+                    <span class="ci-label">Location</span>
+                    <span class="ci-value">Mumbai, Maharashtra, India</span>
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-mortarboard-fill ci-icon"></i>
+                  <div>
+                    <span class="ci-label">Currently</span>
+                    <span class="ci-value">Pursuing MCA — Available for Opportunities</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="sidebar-card mt-3">
+              <div class="sidebar-label">Find Me Online</div>
+              <div class="social-links">
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                <a href="#" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i> GitHub</a>
+                <a href="mailto:samugsharma1111@gmail.com" class="social-link" aria-label="Email"><i class="bi bi-envelope-fill"></i> Email</a>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
   <footer class="site-footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-5">
-            <div class="footer-brand">Samarth Sharma<span class="brand-dot">.</span></div>
-            <p class="footer-about mt-3">Java Full Stack Developer | MCA Student | Passionate about building scalable web applications and growing as a professional software engineer.</p>
-            <div class="footer-socials">
-              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-              <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
-              <a href="#" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
-            </div>
+    <div class="container-blog">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-name">Samarth Sharma</div>
+          <p class="footer-about">Java Full Stack Developer | MCA Student | Passionate about building scalable web applications and growing as a professional software engineer.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="mailto:samugsharma1111@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
           </div>
-          <div class="col-6 col-lg-3">
-            <h6 class="footer-heading">Quick Links</h6>
-            <ul class="footer-links">
-              <li><a href="#about">About Me</a></li>
-              <li><a href="#education">Education</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#certificates">Certificates</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-lg-4">
-            <h6 class="footer-heading">Tech Stack</h6>
-            <div class="footer-badges mt-2">
-              <span class="fb"><i class="bi bi-cup-hot-fill"></i> Java</span>
-              <span class="fb"><i class="bi bi-gear-fill"></i> Spring Boot</span>
-              <span class="fb"><i class="bi bi-database-fill"></i> MySQL</span>
-              <span class="fb"><i class="bi bi-filetype-html"></i> JSP</span>
-              <span class="fb"><i class="bi bi-filetype-php"></i> PHP</span>
-              <span class="fb"><i class="bi bi-bootstrap-fill"></i> Bootstrap</span>
-              <span class="fb"><i class="bi bi-git"></i> Git</span>
-            </div>
+        </div>
+        <div class="footer-links-col">
+          <h6>Quick Links</h6>
+          <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+          </ul>
+        </div>
+        <div class="footer-stack-col">
+          <h6>Tech Stack</h6>
+          <div class="footer-tags">
+            <span><i class="bi bi-cup-hot-fill"></i> Java</span>
+            <span><i class="bi bi-gear-fill"></i> Spring Boot</span>
+            <span><i class="bi bi-database-fill"></i> MySQL</span>
+            <span><i class="bi bi-filetype-html"></i> JSP</span>
+            <span><i class="bi bi-filetype-php"></i> PHP</span>
+            <span><i class="bi bi-bootstrap-fill"></i> Bootstrap</span>
+            <span><i class="bi bi-git"></i> Git</span>
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
-          <span>&copy; 2026 Samarth Ganesh Sharma. All rights reserved.</span>
-          <div class="footer-legal">
-            <a href="#hero">Back to Top</a>
-            <a href="#contact">Hire Me</a>
-          </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Samarth Ganesh Sharma. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#hero">Back to Top ↑</a>
+          <a href="#contact">Hire Me</a>
         </div>
       </div>
     </div>
     <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-chevron-up"></i></button>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
