@@ -85,9 +85,7 @@ a { color: inherit; text-decoration: none; }
 .site-masthead {
   background: var(--bg-dark);
   color: #e8e0d5;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: relative;   /* ✅ changed */
 }
 .masthead-top {
   display: flex;
@@ -109,6 +107,9 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   border-bottom: 3px double rgba(255,255,255,0.12);
 }
+.site-main {
+  margin-top: 60px; /* adjust if needed */
+}
 .masthead-inner { max-width: 1100px; margin: 0 auto; }
 .masthead-name {
   font-family: var(--font-serif);
@@ -128,7 +129,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Nav */
-.masthead-nav { background: #221e1a; }
+.masthead-nav {
+  background: #221e1a;
+  position: fixed;   /* ✅ ALWAYS fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
 .nav-inner {
   max-width: 1100px;
   margin: 0 auto;
